@@ -38,11 +38,10 @@ import Trash from "../../assets/icons/trash.svg";
 import CodeIcon from "../../assets/icons/code-icon.svg";
 import SizeIcon from "../../assets/icons/size-icon.svg";
 import { Typography } from "@mui/material";
-import Loader from "../../shared/Loader/Loader";
 import formsOperations from "../../redux/forms/forms-operations";
 
 import { getUser } from "../../redux/auth/auth-selectors";
-import { selectCartLoading, selectCartsList } from "../../redux/cart/cart-selectors";
+import { selectCartsList } from "../../redux/cart/cart-selectors";
 
 const Basket = () => {
   const user = useSelector(getUser);
@@ -50,14 +49,13 @@ const Basket = () => {
   const location = useLocation();
   const { id } = location.state || {};
   const dispatch = useDispatch();
-  const loading = useSelector(selectCartLoading);
   const product = useSelector(selectOneProduct);
   const cartList = useSelector(selectCartsList);
   const [order, setOrder] = useState([]);
   
   useEffect(() => {
     dispatch(cartOperations.fetchCartProducts(user?.id));
-  }, [dispatch, user.id]);
+  }, [dispatch, user?.id]);
 
   useEffect(() => {
     const total = cartList.reduce(
@@ -170,13 +168,16 @@ const Basket = () => {
   };
 
   useEffect(() => {
-    dispatch(productsOperations.fetchOneProduct({ id }));
+    if (id) {
+      const fetchProducts = async () => {
+       await dispatch(productsOperations.fetchOneProduct({ id }));
+      }
+      fetchProducts();
+    }
+    
   }, [dispatch, id]);
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
         <BasketSection>
           <Container>
             <ProductNavLinks item={product} page="basket" />
@@ -409,7 +410,6 @@ const Basket = () => {
             </BasketOrderWrapper>
           </Container>
         </BasketSection>
-      )}
     </>
   );
 };
