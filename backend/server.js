@@ -10,7 +10,6 @@ const productsRoutes = require("./routes/products");
 
 dotenv.config();
 
-
 // Підключення до MongoDB
 const connectDB = async () => {
   try {
@@ -26,11 +25,12 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-
 // Дозволяємо запити тільки з мого фронтенду (localhost:3000)
 app.use(
   cors({
     origin: "https://innakukla.github.io",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
   })
 );
 app.use("/api/auth", authRoutes);
@@ -38,7 +38,6 @@ app.use("/api/favorites", favoritesRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/form", formRoutes);
 app.use("/api/products", productsRoutes);
-
 
 // ✅ Запуск сервера
 const PORT = process.env.PORT || 5000;
