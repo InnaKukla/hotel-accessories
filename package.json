@@ -2,6 +2,7 @@
   "name": "hotel-accessories",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://innakukla.github.io/hotel-accessories/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -68,5 +69,8 @@
   "main": "db.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }

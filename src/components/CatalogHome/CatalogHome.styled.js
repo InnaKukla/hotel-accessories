@@ -168,7 +168,7 @@ export const CatalogHomeListItem = styled.div`
     height: 375px;
     justify-content: center;
     align-items: center;
-    background-image: url("/img/towel.jpg");
+    background-image: url("./img/towel.jpg");
     background-position: 50% 50%;
     background-size: cover;
     font-family: Rebelton;
@@ -206,7 +206,7 @@ export const CatalogHomeHouseholdLinens = styled.div`
     margin-left: 0px;
     justify-content: center;
     align-items: center;
-    background-image: url("/img/household.jpg");
+    background-image: url("./img/household.jpg");
     background-position: 50% 50%;
     background-size: cover;
     font-family: Rebelton;
@@ -223,7 +223,7 @@ export const CatalogHomeItemBed = styled.div`
     height: 375px;
     justify-content: center;
     align-items: center;
-    background-image: url("/img/badding.jpg");
+    background-image: url("./img/badding.jpg");
     background-position: 50% 50%;
     background-size: cover;
   }

@@ -11,7 +11,7 @@ export const HeroSection = styled.section`
     background-size: cover;
     font-family: Rebelton;
     font-size: 24px;
-    background-image: url("/img/hero-bg.jpg");
+    background-image: url("./img/hero-bg.jpg");
   }
 `;
 

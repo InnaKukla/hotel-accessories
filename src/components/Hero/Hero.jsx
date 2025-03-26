@@ -12,12 +12,12 @@ const Hero = () => {
   return (
     <HeroSection>
       <Container>
-        <HeroWrapper className="hero-wrapper">
+        <HeroWrapper >
           <LogoWhite />
-          <HeroMainText className="hero-main-text">
+          <HeroMainText >
             Welcome to Upscale Linen
           </HeroMainText>
-          <HeroText className="hero-text">
+          <HeroText >
             Everyday Comfort, Endless Elegance
           </HeroText>
         </HeroWrapper>
