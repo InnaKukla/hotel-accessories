@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Angst';
+  src: url('/public/fonts/Angst-Normal.woff') format('woff');
+       /* url('/fonts/Angst.woff') format('woff'); */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rebelton';
+  src: url('/public/fonts/REBELTON-Regular.woff') format('woff');
+       /* url('/public/fonts/Helvetica.ttf') format('woff'); */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'Halvetica';
+  src: 
+  url('/public/fonts/Helvetica.woff') format('woff');
+       /* url('/public/fonts/Helvetica-Light.woff2') format('woff2'); */
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  font-family:'Angst', sans-serif !important;
+  background-color: rgba(249, 249, 249, 1);
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+html,
+
+
+#root {
+  min-height: 100vh;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p,
+li {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
