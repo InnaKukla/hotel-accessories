@@ -93,9 +93,9 @@ const Header = () => {
               <HeaderAboutUs>about us</HeaderAboutUs>
             </NavLink>
             <HeaderNav className="header-nav">
-              <HeaderNavLink>
+              {/* <HeaderNavLink>
                 <SearchIcon />
-              </HeaderNavLink>
+              </HeaderNavLink> */}
               <HeaderNavLink to="/favorites">
                 <FavoriteIcon />
               </HeaderNavLink>
