@@ -32,11 +32,19 @@ const Header = () => {
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
+    // const navLink = event.target.innerHTML
+    // navigate(`/products?category=${navLink}`);
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = (e) => {
-    const navLink = e.target.innerHTML;
+
+  const handleChoose = (event) => {
+    const navLink = event.target.innerHTML
     navigate(`/products?category=${navLink}`);
+    setAnchorEl(null);
+  };
+  const handleClose = (e) => {
+    // const navLink = e.target.innerHTML;
+    // navigate(`/products?category=${navLink}`);
     setAnchorEl(null);
   };
 
@@ -47,9 +55,7 @@ const Header = () => {
           <div style={{ marginRight: "auto" }}>
             <HeaderCatalogButton
               id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
               aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
             >
               <p> catalog</p>
@@ -70,7 +76,7 @@ const Header = () => {
                 {headerAccessoriesList.map((item, index) => (
                   <Link to={item.link} key={index}>
                     <HeaderAccessoriesItem>
-                      <HeaderAccessoriesItemText onClick={handleClose}>
+                      <HeaderAccessoriesItemText onClick={handleChoose}>
                         <p>{item.name}</p>
                       </HeaderAccessoriesItemText>
                     </HeaderAccessoriesItem>
