@@ -17,7 +17,7 @@ const Footer = () => {
     <FooterSection>
       <Container>
         <FooterWrapper className="footer-wrapper">
-       <Link to={"/#header"}>
+       <Link to={"/#header"} style={{display: "flex", justifyContent: "center"}}>
        <img src={LogoFooter} alt="logo footer" /></Link>
           <FooterWrapperText className="footer-wrapper-text">
             <FooterText className="footer-text">
