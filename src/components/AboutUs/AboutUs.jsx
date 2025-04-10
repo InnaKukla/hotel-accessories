@@ -33,6 +33,12 @@ import {
   AboutUsOneSectionWrapper,
   AboutUsSectionMainText,
   AboutUsSectionText,
+  AboutUsSectionImgMiddle,
+  AboutUsSectionImgLarge,
+  AboutUsSectionImgSmall,
+  AboutUsSectionImgTrio,
+  AboutUsLinkImg,
+  AboutUsLinkWrap,
 } from "./AboutUs.styled";
 
 const aboutLinks = [
@@ -48,29 +54,35 @@ const aboutLinks = [
 
 const AboutUs = () => {
   const [activeSection, setActiveSection] = useState("about-us");
-  const [position, setPosition] = useState('before-our-solution');
+  const [position, setPosition] = useState("before-our-vision");
 
   useEffect(() => {
     const handleScroll = () => {
       const ourVisionSection = document.getElementById("our-vision");
-      const hospitalitySection = document.getElementById("hospitality-solutions");
+      const hospitalitySection = document.getElementById(
+        "hospitality-solutions"
+      );
       if (!ourVisionSection || !hospitalitySection) return;
 
-      const ourVisionBottom  = ourVisionSection.offsetTop + ourVisionSection.offsetHeight;
+      const ourVisionBottom =
+        ourVisionSection.offsetTop + ourVisionSection.offsetHeight;
       const hospitalityTop = hospitalitySection.offsetTop;
-      const hospitalityBottom = hospitalityTop + hospitalitySection.offsetHeight;
-
+      const hospitalityBottom =
+        hospitalityTop + hospitalitySection.offsetHeight;
 
       console.log("scrollY:", window.scrollY);
       console.log("hospitalityBottom:", hospitalityBottom);
       console.log("ourSolutionTop:", ourVisionBottom);
 
       if (window.scrollY < ourVisionBottom) {
-        setPosition("before-our-solution")
-      } else if (window.scrollY >= ourVisionBottom && window.scrollY > hospitalityBottom) {
-        setPosition("hospitality")
+        setPosition("before-our-vision");
+      } else if (
+        window.scrollY >= ourVisionBottom &&
+        window.scrollY > hospitalityBottom
+      ) {
+        setPosition("hospitality-solutions");
       } else {
-        setPosition("our-vision")
+        setPosition("our-vision");
       }
     };
 
@@ -109,12 +121,9 @@ const AboutUs = () => {
     <AboutUsSection>
       <Container>
         <AboutUsWrapper>
-          <AboutUsLinksWrapper position={position}>
-            <img
-              src={LogoAboutUs}
-              alt="Logo About Us"
-              style={{ margin: "auto" }}
-            />
+          <AboutUsLinksWrapper positionSection={position}>
+            <AboutUsLinkImg src={LogoAboutUs} alt="Logo About Us" />
+
             <AboutUsLinkTextWrapper>
               {aboutLinks.map((link) => (
                 <li key={link.id} onClick={handleLink}>
@@ -125,21 +134,14 @@ const AboutUs = () => {
                       textDecoration: "none",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "10px",
-                      }}
-                    >
+                    <AboutUsLinkWrap>
                       {activeSection === link.id ? (
                         <img src={Ellipse} alt="Ellipse" />
                       ) : (
                         ""
                       )}
                       <AboutUsLinkText>{link.label}</AboutUsLinkText>
-                    </div>
+                    </AboutUsLinkWrap>
                   </AboutUsLink>
                 </li>
               ))}
@@ -149,7 +151,7 @@ const AboutUs = () => {
               <img src={ButtonBack} alt="Button Back" />
             </AboutUsLinksButtonBack>
           </AboutUsLinksWrapper>
-          <div style={{ width: "750px" }}></div>
+          <div style={{ width: "550px" }}></div>
           <AboutUsSectionsWrapper>
             <AboutUsOneSectionWrapper id="about-us">
               <AboutUsSectionMainText>about us</AboutUsSectionMainText>
@@ -160,11 +162,7 @@ const AboutUs = () => {
                 partnership that becomes an integral part of your hospitality
                 space, or getaway retreat.
               </AboutUsSectionText>
-              <img
-                src={AboutUsImg}
-                alt="about us img"
-                style={{ maxWidth: "1100px" }}
-              />
+              <AboutUsSectionImgLarge src={AboutUsImg} alt="about us img" />
             </AboutUsOneSectionWrapper>
 
             <AboutUsOneSectionWrapper id="our-vision">
@@ -177,16 +175,13 @@ const AboutUs = () => {
                 space, or getaway retreat.
               </AboutUsSectionText>
               <div>
-                <img
+                <AboutUsSectionImgSmall
                   src={OurVisionBadMattress}
                   alt="Our Vision Bad Mattress"
-                  width={366}
-                  style={{ maxWidth: "366px" }}
                 />
-                <img
+                <AboutUsSectionImgMiddle
                   src={OurVisionBad}
                   alt="Our Vision Bad"
-                  style={{ maxWidth: "739.5px" }}
                 />
               </div>
             </AboutUsOneSectionWrapper>
@@ -201,15 +196,13 @@ const AboutUs = () => {
                 the manufacturing process.
               </AboutUsSectionText>
               <div>
-                <img
+                <AboutUsSectionImgMiddle
                   src={CoreValuesBlanket}
                   alt="Core Values Blanket"
-                  style={{ maxWidth: "739.5px" }}
                 />
-                <img
+                <AboutUsSectionImgSmall
                   src={CoreValuesPillow}
                   alt="Core Values Pillow"
-                  style={{ maxWidth: "366px" }}
                 />
               </div>
             </AboutUsOneSectionWrapper>
@@ -223,10 +216,9 @@ const AboutUs = () => {
                 Quality craftsmanship ensures a restful repose, exceeding
                 expectations.
               </AboutUsSectionText>
-              <img
+              <AboutUsSectionImgLarge
                 src={OurCollection}
                 alt="Our Collection"
-                style={{ maxWidth: "1100px" }}
               />
             </AboutUsOneSectionWrapper>
 
@@ -241,23 +233,20 @@ const AboutUs = () => {
                 ritual, making us the trusted choice for hotels, country clubs,
                 rentals, and hospitality spaces.
               </AboutUsSectionText>
-              <div>
+              <AboutUsSectionImgTrio>
                 <img
                   src={PlushBathEssentialsGirl}
                   alt="Plush Bath Essentials Girl"
-                  style={{ maxWidth: "367px" }}
                 />
                 <img
                   src={PlushBathEssentialsTowel}
                   alt="Plush Bath Essentials Towel"
-                  style={{ maxWidth: "368px" }}
                 />
                 <img
                   src={PlushBathEssentialsBathrobe}
                   alt="Plush Bath Essentials Bathrobe"
-                  style={{ maxWidth: "368px" }}
                 />
-              </div>
+              </AboutUsSectionImgTrio>
             </AboutUsOneSectionWrapper>
 
             <AboutUsOneSectionWrapper id="kitchen-elegance">
@@ -272,15 +261,13 @@ const AboutUs = () => {
                 space, or getaway retreat.
               </AboutUsSectionText>
               <div style={{ display: "flex" }}>
-                <img
+                <AboutUsSectionImgMiddle
                   src={KitchenEleganceBeyondTowel}
                   alt="Kitchen Elegance Beyond Towel"
-                  style={{ maxWidth: "739.5px" }}
                 />
-                <img
+                <AboutUsSectionImgSmall
                   src={KitchenEleganceBeyondTowels}
                   alt="Kitchen Elegance Beyond Towels"
-                  style={{ maxWidth: "366px" }}
                 />
               </div>
             </AboutUsOneSectionWrapper>
@@ -290,7 +277,7 @@ const AboutUs = () => {
                 Comprehensive Hospitality Solutions
               </AboutUsSectionMainText>
               <AboutUsSectionText>
-                Upscale Linen is not just a linens provider; we're your partner
+                Upscale Linen is not just a linens provider: we're your partner
                 for comprehensive hospitality solutions. From bedrooms to
                 bathrooms, kitchens, and beyond, our commitment to quality
                 extends to a wide array of products, ensuring every corner of
@@ -298,11 +285,12 @@ const AboutUs = () => {
                 the future of hospitality with Upscale Linen – where luxury is a
                 lifestyle, and sophistication knows no boundaries.
               </AboutUsSectionText>
-              <img
-                src={HospitalitySolutions}
-                alt="Comprehensive Hospitality Solutions"
-                style={{ maxWidth: "1100px" }}
-              />
+              <div style={{ display: "flex" }}>
+                <AboutUsSectionImgLarge
+                  src={HospitalitySolutions}
+                  alt="Comprehensive Hospitality Solutions"
+                />
+              </div>
             </AboutUsOneSectionWrapper>
 
             <AboutUsOneSectionWrapper>
@@ -317,10 +305,9 @@ const AboutUs = () => {
                 hospitality spaces – where luxury is not just a product but a
                 way of living, and sophistication knows no boundaries.
               </AboutUsSectionText>
-              <img
+              <AboutUsSectionImgLarge
                 src={JoinUs}
                 alt="Join Us in Elevating Your Lifestyle and Business"
-                style={{ maxWidth: "1100px" }}
               />
             </AboutUsOneSectionWrapper>
           </AboutUsSectionsWrapper>
