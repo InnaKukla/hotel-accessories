@@ -1,6 +1,8 @@
 import React, { useEffect} from "react";
 import { Container } from "../Header/Header.styled";
 import {
+  ContainerFavorites,
+  FavoritesItemImg,
   FavoritesList,
   FavoritesSection,
   FavoritesTitle,
@@ -60,9 +62,9 @@ const Favorites = () => {
 
   return (
     <FavoritesSection>
-      <Container>
+      <ContainerFavorites>
         <ProductNavLinks page="favorites" />
-        <div style={{ paddingBottom: "160px" }}>
+        <FavoritesWrapper>
           <FavoritesTitle>Favorites</FavoritesTitle>
           {user && (
             <FavoritesWrapper>
@@ -91,11 +93,9 @@ const Favorites = () => {
                         style={{ display: "flex" }}
                         state={{ id: item._id }}
                       >
-                        <img
+                        <FavoritesItemImg
                           src={item.image}
                           alt={item.name}
-                          width={340}
-                          height={300}
                         />
                       </Link>
                       <CatalogProductsItemWrap>
@@ -128,8 +128,8 @@ const Favorites = () => {
               </FavoritesList>
             </FavoritesWrapper>
           )}
-        </div>
-      </Container>
+        </FavoritesWrapper>
+      </ContainerFavorites>
     </FavoritesSection>
   );
 };
