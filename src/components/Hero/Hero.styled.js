@@ -24,7 +24,7 @@ padding-top: 416px;
   background-size: cover;
   font-family: Rebelton;
   font-size: 20px;
-  background-image: url("/img/hero-bg.jpg");
+  background-image: url("./img/hero-bg.jpg");
   }
   @media screen and (max-width: 480px) {
     /* padding-top: 170px;
