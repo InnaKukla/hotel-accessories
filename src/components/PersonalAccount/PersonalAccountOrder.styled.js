@@ -1,55 +1,76 @@
 import styled from "styled-components";
 
 export const PersonalAccountOrderWrap = styled.div`
-  @media screen and (min-width: 768px) {
+    @media screen and (max-width: 1024px) {
   }
-
-  @media screen and (min-width: 1280px) {
+  @media screen and (max-width: 768px) {
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderList = styled.ul`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+  @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     gap: 20px;
     list-style: none;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  }
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const PersonalAccountOrderItem = styled.li`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+ grid-template-columns: 1.7fr 3fr;
+ display: grid;
     align-items: center;
-    gap: 10px;
+  @media screen and (max-width: 1024px) {
     display: grid;
-    grid-template-columns: 2.9fr 0.9fr 1.5fr repeat(2, 1fr) 2fr;
-    justify-items: start;
-
+    align-items: center;
+    grid-template-columns: 2fr 3fr;
+  }
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderCodeWrap = styled.div`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
-    display: flex;
+display: flex;
     align-items: center;
     gap: 5px;
+@media screen and (max-width: 1024px) {
+
+  }
+  @media screen and (max-width: 768px) {
+
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderCode = styled.p`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: rgba(35, 81, 96, 1);
+  @media screen and (max-width: 1024px) {
     font-family: Helvetica;
     font-weight: 400;
     font-size: 16px;
@@ -57,26 +78,59 @@ export const PersonalAccountOrderCode = styled.p`
     text-transform: uppercase;
     color: rgba(35, 81, 96, 1);
   }
+  @media screen and (max-width: 768px) {
+    font-family: Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: rgba(35, 81, 96, 1);
+  }
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const PersonalAccountOrderTitleWrap = styled.div`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0 20px 20px;
+    justify-content: space-between;
+  @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 20px 0 20px 20px;
     justify-content: space-between;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 0 20px 10px;
+  justify-content: space-between;
+  }
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const PersonalAccountOrderTitle = styled.p`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+text-align: left;
+    font-family: Rebelton;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 110.00000000000001%;
+    color: rgba(35, 81, 96, 1);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+      -webkit-line-clamp: none;
+      /* display: flex; */
+    }
+  @media screen and (max-width: 1024px) {
     text-align: left;
     font-family: Rebelton;
     font-weight: 400;
@@ -88,29 +142,73 @@ export const PersonalAccountOrderTitle = styled.p`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover{
+    &:hover {
       -webkit-line-clamp: none;
       /* display: flex; */
     }
   }
+  @media screen and (max-width: 768px) {
+    text-align: left;
+  font-family: Rebelton;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 110.00000000000001%;
+  color: rgba(35, 81, 96, 1);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &:hover {
+    -webkit-line-clamp: none;
+    /* display: flex; */
+  }
+  }
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const PersonalAccountOrderTextWrap = styled.div`
-  @media screen and (min-width: 768px) {
+gap: 20px;
+align-items: center;
+display: flex;
+  @media screen and (max-width: 1024px) {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 1fr 3fr 1fr 3fr 3fr;
+    padding-top: 5px;
+    padding-bottom: 0;
   }
-
-  @media screen and (min-width: 1280px) {
-    display: flex;
-    gap: 80px;
+  @media screen and (max-width: 768px) {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 1fr 3fr 1fr 3fr 2fr;
+    column-gap: 5px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderText = styled.p`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(35, 81, 96, 1);
+    opacity: 100%;
+    flex-wrap: wrap;
+    span {
+      opacity: 50%;
+    }
+  @media screen and (max-width: 1024px) {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 5px;
     font-family: Helvetica;
@@ -121,28 +219,64 @@ export const PersonalAccountOrderText = styled.p`
     opacity: 100%;
     span {
       opacity: 50%;
+      text-align: center;
     }
+  }
+  @media screen and (max-width: 768px) {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(35, 81, 96, 1);
+  opacity: 100%;
+  span {
+    opacity: 50%;
+    text-align: center;
+  }
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderDetailsList = styled.ul`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     gap: 14px;
     padding-bottom: 40px;
     padding-top: 40px;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  }
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const PersonalAccountOrderDetailsItem = styled.li`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(35, 81, 96, 0.2);
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(35, 81, 96, 1);
+    opacity: 100%;
+  @media screen and (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgba(35, 81, 96, 0.2);
@@ -152,44 +286,88 @@ export const PersonalAccountOrderDetailsItem = styled.li`
     line-height: 150%;
     color: rgba(35, 81, 96, 1);
     opacity: 100%;
-   
+    gap: 0;
+  }
+  @media screen and (max-width: 768px) {
+    display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(35, 81, 96, 0.2);
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(35, 81, 96, 1);
+  opacity: 100%;
+  gap: 5px;
+  span{
+    text-align: end;
+  }
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderDetailsTextWrap = styled.div`
-  @media screen and (min-width: 768px) {
+ display: flex;
+  @media screen and (max-width: 1024px) {
   }
-
-  @media screen and (min-width: 1280px) {
-    display: flex;
+  @media screen and (max-width: 768px) {
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderDetailsTitle = styled.p`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+ font-family: Helvetica;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: rgba(35, 81, 96, 1);
+  @media screen and (max-width: 1024px) {
     font-family: Helvetica;
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
     letter-spacing: 0%;
     color: rgba(35, 81, 96, 1);
-    
+  }
+  @media screen and (max-width: 768px) {
+    font-family: Helvetica;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: rgba(35, 81, 96, 1);
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const PersonalAccountOrderDetailsTextTitle = styled.p`
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
+font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(35, 81, 96, 1);
+    opacity: 20%;
+  @media screen and (max-width: 1024px) {
     font-family: Helvetica;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: rgba(35, 81, 96, 1);
     opacity: 20%;
+  }
+  @media screen and (max-width: 768px) {
+    font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(35, 81, 96, 1);
+  opacity: 20%;
+  text-align: start;
+  }
+  @media screen and (max-width: 480px) {
   }
 `;

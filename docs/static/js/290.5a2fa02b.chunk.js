@@ -1,8 +1,4 @@
-import { Pagination } from "@mui/material";
-import { Link } from "react-router";
-import styled from "styled-components";
-
-export const CatalogSection = styled.section`
+"use strict";(self.webpackChunkhotel_accessories=self.webpackChunkhotel_accessories||[]).push([[290],{1719:(e,i,t)=>{t.d(i,{JR:()=>d,VW:()=>a,Vs:()=>o,hT:()=>r,mP:()=>n});const a=e=>e.products.productsList,n=e=>e.products.oneProduct,d=e=>e.products.totalPages,o=e=>e.products.currentPage,r=e=>e.products.isLoading},7277:(e,i,t)=>{t.d(i,{$q:()=>r,FR:()=>l,HZ:()=>j,Ml:()=>A,O:()=>v,Rt:()=>o,S1:()=>s,TF:()=>p,U1:()=>g,ab:()=>c,dr:()=>w,eZ:()=>h,es:()=>y,hj:()=>b,lT:()=>f,re:()=>x,sJ:()=>k,tO:()=>u,yp:()=>m});var a=t(9135),n=t(1675),d=t(5464);const o=d.Ay.section`
   display: flex;
   padding-top: 48px;
   background-color: rgba(249, 249, 249, 1);
@@ -13,9 +9,7 @@ export const CatalogSection = styled.section`
   @media screen and (max-width: 480px) {
     padding-top: 100px;
   }
-`;
-
-export const ContainerCatalog = styled.div`
+`,r=d.Ay.div`
   max-width: 1280px;
   width: 100%;
   padding: 0 20px;
@@ -29,18 +23,14 @@ export const ContainerCatalog = styled.div`
   @media screen and (max-width: 480px) {
     max-width: 100%;
   }
-`;
-
-export const CatalogWrapper = styled.div`
+`,x=d.Ay.div`
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1280px) {
     /* margin-bottom: 60px; */
   }
-`;
-
-export const CatalogHeader = styled.div`
+`,p=d.Ay.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -61,9 +51,7 @@ export const CatalogHeader = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogMainText = styled.h2`
+`,s=d.Ay.h2`
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: Angst;
@@ -91,9 +79,7 @@ export const CatalogMainText = styled.h2`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterWrapper = styled.div`
+`,c=(d.Ay.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -105,9 +91,7 @@ export const CatalogFilterWrapper = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterText = styled.p`
+`,d.Ay.p`
   font-family: Helvetica;
   font-size: 20px;
   line-height: 30px;
@@ -119,9 +103,7 @@ export const CatalogFilterText = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogLine = styled.div`
+`,d.Ay.div`
   height: 1px;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -135,9 +117,7 @@ export const CatalogLine = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogList = styled.div`
+`),l=(d.Ay.div`
   display: flex;
   align-items: center;
   grid-auto-columns: 1fr;
@@ -151,9 +131,7 @@ export const CatalogList = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListTextWrap = styled.div`
+`,d.Ay.div`
   display: flex;
   height: 463px;
   width: 463px;
@@ -169,9 +147,7 @@ export const CatalogListTextWrap = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListText = styled.p`
+`,d.Ay.p`
   margin-right: 112px;
   margin-left: 112px;
   opacity: 1;
@@ -187,9 +163,7 @@ export const CatalogListText = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListItem = styled.div`
+`,d.Ay.div`
   display: flex;
   width: 463px;
   height: 463px;
@@ -206,9 +180,7 @@ export const CatalogListItem = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListTextItem = styled.p`
+`,d.Ay.p`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,9 +196,7 @@ export const CatalogListTextItem = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogHouseholdLinens = styled.div`
+`,d.Ay.div`
   display: flex;
   width: 463px;
   height: 463px;
@@ -247,9 +217,7 @@ export const CatalogHouseholdLinens = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogItemBed = styled.div`
+`,d.Ay.div`
   display: flex;
   width: 463px;
   height: 463px;
@@ -264,18 +232,14 @@ export const CatalogItemBed = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogAll = styled.div`
+`,d.Ay.div`
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 768px) {
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterList = styled.div`
+`),m=d.Ay.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -295,9 +259,7 @@ export const CatalogFilterList = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterButton = styled.button`
+`,h=d.Ay.button`
   width: 140px;
   background: none;
   border: none;
@@ -341,9 +303,7 @@ export const CatalogFilterButton = styled.button`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsList = styled.ul`
+`,g=d.Ay.ul`
   /* margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -373,8 +333,7 @@ export const CatalogProductsList = styled.ul`
     gap: 30px;
     justify-content: flex-start; */
   }
-`;
-export const CatalogProductsItem = styled.li`
+`,w=d.Ay.li`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -391,9 +350,7 @@ export const CatalogProductsItem = styled.li`
     /* flex-grow: 1; */
     min-width: 100%;
   }
-`;
-
-export const CatalogProductsItemImg = styled.img`
+`,f=(d.Ay.img`
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -404,9 +361,7 @@ export const CatalogProductsItemImg = styled.img`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsItemWrap = styled.div`
+`,d.Ay.div`
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
@@ -417,9 +372,7 @@ export const CatalogProductsItemWrap = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsItemTextWrap = styled.div`
+`),y=d.Ay.div`
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 768px) {
@@ -427,9 +380,7 @@ export const CatalogProductsItemTextWrap = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsItemTextCode = styled.p`
+`,u=d.Ay.p`
   font-family: Rebelton;
   font-weight: 400;
   font-size: 16px;
@@ -450,9 +401,7 @@ export const CatalogProductsItemTextCode = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsItemTextName = styled.p`
+`,b=d.Ay.p`
   font-family: Helvetica;
   font-weight: 400;
   font-size: 28px;
@@ -495,9 +444,7 @@ export const CatalogProductsItemTextName = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsItemTextPrice = styled.p`
+`,j=d.Ay.p`
   font-family: Helvetica;
   font-weight: 400;
   font-size: 28px;
@@ -511,9 +458,7 @@ export const CatalogProductsItemTextPrice = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogHomeItemLink = styled(Link)`
+`,v=(0,d.Ay)(n.N_)`
   text-decoration: none;
   display: block;
   @media screen and (max-width: 1024px) {
@@ -522,9 +467,7 @@ export const CatalogHomeItemLink = styled(Link)`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsBuyWrap = styled.button`
+`,A=d.Ay.button`
   background-color: rgba(35, 81, 96, 1);
   display: flex;
   flex-direction: column;
@@ -538,14 +481,7 @@ export const CatalogProductsBuyWrap = styled.button`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsPagination = styled(Pagination).attrs(
-  ({ isFirstPage, isLastPage }) => ({
-    $isFirstPage: isFirstPage,
-    $isLastPage: isLastPage,
-  })
-)`
+`,k=(0,d.Ay)(a.A).attrs((e=>{let{isFirstPage:i,isLastPage:t}=e;return{$isFirstPage:i,$isLastPage:t}}))`
   & .MuiPaginationItem-root {
     font-family: Rebelton;
     font-weight: 400;
@@ -624,4 +560,5 @@ export const CatalogProductsPagination = styled(Pagination).attrs(
   }
   @media screen and (max-width: 480px) {
   }
-`;
+`},7843:(e,i,t)=>{t.d(i,{A:()=>a});t(5043);const a=t.p+"static/media/trolley.2c45ca1fe2a8bacc7202060fff299aca.svg"},8290:(e,i,t)=>{t.r(i),t.d(i,{default:()=>h});var a=t(5043),n=t(3003),d=t(1675),o=t(2279),r=t(1719),x=t(7277),p=t(7843),s=t(497),c=t(5619),l=t(579);const m=()=>{const e=[{id:"towels",label:"towels"},{id:"bedding",label:"bedding"},{id:"household-linens",label:"household linens"}],i=(0,n.wA)(),t=(0,n.d4)(r.hT),m=(0,n.d4)(r.JR),h=(0,n.d4)(r.Vs),g=(0,n.d4)(r.VW),[w,f]=(0,a.useState)(""),[y,u]=(0,a.useState)(h||1),[b]=(0,d.ok)(),j=b.get("category");(0,a.useEffect)((()=>{(async()=>{if(j){var e;f(j);const t=null===(e=(await i(o.A.fetchProductsByCategory(j))).payload)||void 0===e?void 0:e.currentPage;u(t)}else v(),f("")})(),window.scrollTo({top:0,behavior:"smooth"})}),[y,w,j]);const v=async()=>{b.delete("category"),f(""),await i(o.A.fetchAllProducts({page:y}))};return(0,l.jsx)(l.Fragment,{children:t?(0,l.jsx)(s.A,{}):(0,l.jsx)(x.Rt,{children:(0,l.jsxs)(x.$q,{children:[(0,l.jsxs)(x.re,{children:[(0,l.jsxs)(x.TF,{children:[(0,l.jsx)(x.S1,{onClick:v,style:{cursor:"pointer"},children:"catalog"}),(0,l.jsx)(x.yp,{children:e.map((t=>(0,l.jsx)(x.eZ,{onClick:()=>(async t=>{e.some((e=>e.id===t))&&(f(t),b.set("category",t)),await i(o.A.fetchProductsByCategory(t))})(t.id),style:{textDecoration:w===t.id?"underline":"none"},children:t.label},t.id)))})]}),(0,l.jsx)(x.ab,{}),(0,l.jsx)(x.FR,{children:(0,l.jsx)(x.U1,{children:g&&g.length>0?g.map((e=>(0,l.jsxs)(x.dr,{children:[(0,l.jsx)(d.N_,{to:`/products/${e._id}`,style:{display:"flex"},state:{id:e._id},children:(0,l.jsx)("img",{src:e.image,alt:e.name,width:340,height:300})}),(0,l.jsxs)(x.lT,{children:[(0,l.jsx)(d.N_,{to:`/products/${e._id}`,children:(0,l.jsxs)(x.es,{children:[(0,l.jsx)(x.tO,{children:e.category}),(0,l.jsx)(x.hj,{children:e.name}),(0,l.jsx)(x.HZ,{children:e.price})]})}),(0,l.jsx)(d.N_,{to:"/basket",state:{id:e._id},children:(0,l.jsx)(x.Ml,{onClick:()=>(async e=>{await i(c.A.addCartProduct({productId:e,quantity:1}))})(e._id),children:(0,l.jsx)("img",{src:p.A,alt:"Trolley"})})})]})]},e._id))):(0,l.jsx)("div",{style:{width:"1440px"},children:(0,l.jsx)("p",{children:"No products found for this category"})})})})]}),g&&g.length>0&&(0,l.jsx)("div",{style:{display:"flex",marginTop:"60px",marginBottom:"200px"},children:(0,l.jsx)(x.sJ,{sx:{margin:"auto"},count:m||0,page:y,onChange:(e,i)=>{u(i)}})})]})})})},h=()=>(0,l.jsx)("div",{children:(0,l.jsx)(m,{})})}}]);
+//# sourceMappingURL=290.5a2fa02b.chunk.js.map
