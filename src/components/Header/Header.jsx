@@ -65,6 +65,7 @@ const Header = () => {
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
+              style={{zIndex: 1600}}
             >
                 <Link to="/products">
                   <HeaderAccessoriesItem>
