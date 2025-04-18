@@ -28,6 +28,7 @@ import {
   CatalogProductsBuyWrap,
   CatalogProductsPagination,
   ContainerCatalog,
+  CatalogProductsItemImg,
 } from "./Catalog.styled";
 
 import Trolley from "../../assets/icons/trolley.svg";
@@ -108,7 +109,7 @@ const Catalog = () => {
         <CatalogSection>
           <ContainerCatalog>
             <CatalogWrapper>
-              <CatalogHeader >
+              <CatalogHeader>
                 <CatalogMainText
                   onClick={handleAllProducts}
                   style={{ cursor: "pointer" }}
@@ -132,54 +133,55 @@ const Catalog = () => {
               </CatalogHeader>
               <CatalogLine />
 
-              <CatalogAll>
-                <CatalogProductsList >
-                  {products && products.length > 0 ? (
-                    products.map((item) => (
-                      <CatalogProductsItem key={item._id}>
+              {/* <CatalogAll> */}
+              <CatalogProductsList>
+                {products && products.length > 0 ? (
+                  products.map((item) => (
+                    <CatalogProductsItem key={item._id}>
+                      <Link
+                        to={`/products/${item._id}`}
+                        style={{ display: "flex" }}
+                        state={{ id: item._id }}
+                      >
+                        <CatalogProductsItemImg
+                          src={item.image}
+                          alt={item.name}
+                        />
+                      </Link>
+                      <CatalogProductsItemWrap>
                         <Link
                           to={`/products/${item._id}`}
-                          style={{ display: "flex" }}
-                          state={{ id: item._id }}
+                          style={{ marginLeft: "5px", marginTop: "5px" }}
                         >
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            width={340}
-                            height={300}
-                          />
+                          <CatalogProductsItemTextWrap>
+                            <CatalogProductsItemTextCode>
+                              {item.category}
+                            </CatalogProductsItemTextCode>
+                            <CatalogProductsItemTextName>
+                              {item.name}
+                            </CatalogProductsItemTextName>
+                            <CatalogProductsItemTextPrice>
+                              {item.price}
+                            </CatalogProductsItemTextPrice>
+                          </CatalogProductsItemTextWrap>
                         </Link>
-                        <CatalogProductsItemWrap>
-                          <Link to={`/products/${item._id}`}>
-                            <CatalogProductsItemTextWrap>
-                              <CatalogProductsItemTextCode>
-                                {item.category}
-                              </CatalogProductsItemTextCode>
-                              <CatalogProductsItemTextName>
-                                {item.name}
-                              </CatalogProductsItemTextName>
-                              <CatalogProductsItemTextPrice>
-                                {item.price}
-                              </CatalogProductsItemTextPrice>
-                            </CatalogProductsItemTextWrap>
-                          </Link>
-                          <Link to="/basket" state={{ id: item._id }}>
-                            <CatalogProductsBuyWrap
-                              onClick={() => handleAddToCart(item._id)}
-                            >
-                              <img src={Trolley} alt="Trolley" />
-                            </CatalogProductsBuyWrap>
-                          </Link>
-                        </CatalogProductsItemWrap>
-                      </CatalogProductsItem>
-                    ))
-                  ) : (
-                    <div style={{ width: "1440px" }}>
-                      <p>No products found for this category</p>
-                    </div>
-                  )}
-                </CatalogProductsList>
-              </CatalogAll>
+                        <Link to="/basket" state={{ id: item._id }}>
+                          <CatalogProductsBuyWrap
+                            onClick={() => handleAddToCart(item._id)}
+                          >
+                            <img src={Trolley} alt="Trolley" />
+                          </CatalogProductsBuyWrap>
+                        </Link>
+                      </CatalogProductsItemWrap>
+                    </CatalogProductsItem>
+                  ))
+                ) : (
+                  <div style={{ width: "1440px" }}>
+                    <p>No products found for this category</p>
+                  </div>
+                )}
+              </CatalogProductsList>
+              {/* </CatalogAll> */}
             </CatalogWrapper>
             {products && products.length > 0 && (
               <div
