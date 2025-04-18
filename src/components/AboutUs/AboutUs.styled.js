@@ -7,12 +7,29 @@ export const AboutUsSection = styled.section`
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 768px) {
-    padding-top: 50px;
+    padding-top: 90px;
     background-color: rgba(249, 249, 249, 1);
   }
   @media screen and (max-width: 480px) {
   }
 `;
+
+export const AboutUsSectionWrapHeader = styled.div`
+  
+  @media screen and (max-width: 1024px) {
+  }
+  @media screen and (max-width: 768px) {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 40px;
+  }
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
+
 
 export const AboutUsWrapper = styled.div`
   display: flex;
@@ -29,40 +46,43 @@ export const AboutUsWrapper = styled.div`
     position: relative;
   }
   @media screen and (max-width: 480px) {
+    align-items: center;
   }
 `;
 
 export const AboutUsLinksWrapper = styled.div`
-  position: sticky;
-  top: 130px;
+  position: fixed;
+  top: ${(top) => top || "150px"};
   z-index: 1000;
   text-align: center;
   position: fixed;
-  width: 20%;
-  /* max-width: 280px; */
-  top: ${(props) =>
-    props.positionSection === "before-our-vision"
-      ? "170px"
-      : props.positionSection === "hospitality-solutions"
-      ? "-100px"
-      : "10px"};
+  width: 30%;
   transition: top 0.3s ease-in-out;
   @media screen and (max-width: 1024px) {
     text-align: center;
     position: fixed;
-    /* max-width: 200px; */
-    top: ${(props) =>
-      props.positionSection === "before-our-vision"
-        ? "170px"
-        : props.positionSection === "hospitality-solutions"
-        ? "-190px"
-        : "10px"};
-    transition: top 0.3s ease-in-out;
+    width: 30%;
+    top: ${(top) => top || "150px"};
     transition: top 0.3s ease-in-out;
   }
   @media screen and (max-width: 768px) {
+    display: grid;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+    top: 96px;
+    flex-wrap: wrap;
+    grid-template-columns: 3fr 1fr;;
+    /* justify-items: normal; */
+    /* align-items: center; */
+    padding: 20px 0;
   }
   @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 23px;
   }
 `;
 
@@ -71,8 +91,10 @@ export const AboutUsLinkImg = styled.img`
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 768px) {
+    /* margin-left: 15px; */
   }
   @media screen and (max-width: 480px) {
+    /* margin: auto; */
   }
 `;
 
@@ -101,10 +123,15 @@ export const AboutUsLinkTextWrapper = styled.ul`
 `;
 
 export const AboutUsLink = styled.a`
-  @media screen and (min-width: 768px) {
+  text-decoration: none;
+  text-align: center;
+  @media screen and (max-width: 1024px) {
   }
-
-  @media screen and (min-width: 1280px) {
+  @media screen and (max-width: 768px) {
+    text-decoration: none;
+    text-align: justify;
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -148,6 +175,18 @@ export const AboutUsLinkText = styled.p`
   }
 `;
 
+export const AboutUsLine = styled.div`
+  width: 550px;
+  @media screen and (max-width: 1024px) {
+    width: 450px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 0;
+  }
+  @media screen and (max-width: 480px) {
+  }
+`;
+
 export const AboutUsLinksButtonBack = styled(Link)`
   margin: auto;
   background: none;
@@ -174,12 +213,16 @@ export const AboutUsSectionsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-top: 60px;
   }
   @media screen and (max-width: 480px) {
+    margin-top: 100px;
   }
 `;
 
 export const AboutUsOneSectionWrapper = styled.div`
+  scroll-margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,15 +240,23 @@ export const AboutUsOneSectionWrapper = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
+    scroll-margin-top: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 130px;
+    margin-top: 70px;
+    padding-top: 50px;
     &:first-child {
       margin-top: 0;
     }
   }
   @media screen and (max-width: 480px) {
+    scroll-margin-top: 200px;
+    /* margin-top: 70px; */
+    margin-top: 200px;
+    &:first-child {
+      padding-top: 100px;
+    }
   }
 `;
 
@@ -217,6 +268,7 @@ export const AboutUsSectionMainText = styled.h2`
   letter-spacing: 0%;
   text-align: center;
   color: rgba(0, 0, 0, 1);
+  word-break: break-word;
   @media screen and (max-width: 1024px) {
     font-family: Angst;
     font-weight: 50;
@@ -240,12 +292,13 @@ export const AboutUsSectionMainText = styled.h2`
 `;
 
 export const AboutUsSectionImgSmall = styled.img`
-  max-width: 31%;
+  max-width: 33%;
   /* max-width: 366px; */
   @media screen and (max-width: 1024px) {
     /* max-width: 165.7px; */
   }
   @media screen and (max-width: 768px) {
+    max-width: 33.1%;
     /* max-width: 105.9px; */
   }
   @media screen and (max-width: 480px) {
@@ -313,11 +366,12 @@ export const AboutUsSectionImgTrio = styled.div`
 
 export const AboutUsSectionImgMiddle = styled.img`
   /* max-width: 739.5px; */
-  max-width: 62.7%;
+  max-width: 67%;
   @media screen and (max-width: 1024px) {
     /* max-width: 334.5px; */
   }
   @media screen and (max-width: 768px) {
+    max-width: 66.9%;
     /* max-width: 214.1px; */
   }
   @media screen and (max-width: 480px) {

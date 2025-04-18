@@ -39,7 +39,15 @@ import {
   AboutUsSectionImgTrio,
   AboutUsLinkImg,
   AboutUsLinkWrap,
+  AboutUsLine,
+  AboutUsSectionWrapHeader,
 } from "./AboutUs.styled";
+import { useMediaQuery } from "react-responsive";
+import { Box } from "@mui/system";
+import {
+  Autocomplete,
+  TextField,
+} from "@mui/material";
 
 const aboutLinks = [
   { id: "about-us", label: "About us" },
@@ -54,104 +62,188 @@ const aboutLinks = [
 
 const AboutUs = () => {
   const [activeSection, setActiveSection] = useState("about-us");
-  const [position, setPosition] = useState("before-our-vision");
+  const [value, setValue] = useState(aboutLinks[0]);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const [position, setPosition] = useState("100px");
 
   useEffect(() => {
     const handleScroll = () => {
-      const ourVisionSection = document.getElementById("our-vision");
-      const hospitalitySection = document.getElementById(
-        "hospitality-solutions"
-      );
-      if (!ourVisionSection || !hospitalitySection) return;
+      const offset = 200;
+      let current = aboutLinks[0].id;
 
-      const ourVisionBottom =
-        ourVisionSection.offsetTop + ourVisionSection.offsetHeight;
-      const hospitalityTop = hospitalitySection.offsetTop;
-      const hospitalityBottom =
-        hospitalityTop + hospitalitySection.offsetHeight;
+      for (const link of aboutLinks) {
+        const section = document.getElementById(link.id);
 
-      console.log("scrollY:", window.scrollY);
-      console.log("hospitalityBottom:", hospitalityBottom);
-      console.log("ourSolutionTop:", ourVisionBottom);
+        if (section) {
+          const top = section.getBoundingClientRect().top;
 
-      if (window.scrollY < ourVisionBottom) {
-        setPosition("before-our-vision");
-      } else if (
-        window.scrollY >= ourVisionBottom &&
-        window.scrollY > hospitalityBottom
-      ) {
-        setPosition("hospitality-solutions");
-      } else {
-        setPosition("our-vision");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    handleLink();
-  }, []);
-
-  const handleLink = () => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100; // Додаємо невеликий відступ
-
-      for (const section of aboutLinks) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section.id);
-            //   break;
+          if (top - offset < 0) {
+            current = link.id;
           }
         }
       }
+      setActiveSection(current);
+
+      const hospitality = document.getElementById("hospitality-solutions");
+      const joinUs = document.getElementById("join-us");
+      const hospitalityTop = hospitality?.getBoundingClientRect().top || 0;
+      const joinUsTop = joinUs?.getBoundingClientRect().top || 0;
+
+      if (joinUsTop <= 100) {
+        setPosition("-170px");
+      } else if (hospitalityTop <= 100) {
+        setPosition("50px");
+      } else {
+        setPosition("150px");
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const found = aboutLinks.find((link) => link.id === activeSection);
+
+    if (found) {
+      setValue(found);
+    }
+  }, [activeSection]);
+
+  const handleScrollTo = (id) => {
+    const el = document.getElementById(id);
+    console.log(el);
+    
+    if (el) {
+      const offset = 600;
+     const top = el.getBoundingClientRect().top + window.scrollY - offset;
+     
+     window.scrollTo({
+      top,
+      behavior: "smooth"
+     })  
+      // el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
     <AboutUsSection>
       <Container>
         <AboutUsWrapper>
-          <AboutUsLinksWrapper positionSection={position}>
-            <AboutUsLinkImg src={LogoAboutUs} alt="Logo About Us" />
+          <AboutUsLinksWrapper positionSection={activeSection} top={position}>
+        <AboutUsSectionWrapHeader>
+        <AboutUsLinkImg src={LogoAboutUs} alt="Logo About Us" />
 
-            <AboutUsLinkTextWrapper>
-              {aboutLinks.map((link) => (
-                <li key={link.id} onClick={handleLink}>
-                  <AboutUsLink
-                    href={`#${link.id}`}
-                    style={{
-                      opacity: activeSection === link.id ? "100%" : "20%",
-                      textDecoration: "none",
-                    }}
-                  >
-                    <AboutUsLinkWrap>
-                      {activeSection === link.id ? (
-                        <img src={Ellipse} alt="Ellipse" />
-                      ) : (
-                        ""
-                      )}
-                      <AboutUsLinkText>{link.label}</AboutUsLinkText>
-                    </AboutUsLinkWrap>
-                  </AboutUsLink>
-                </li>
-              ))}
-            </AboutUsLinkTextWrapper>
+{isMobile ? (
+  <Autocomplete
+    value={value}
+    onChange={(event, newValue) => {
+      if (newValue) {
+        setValue(newValue);
+        handleScrollTo(newValue.id);
+      }
+    }}
+    disablePortal
+    options={aboutLinks}
+    getOptionLabel={(option) => option.label}
+    sx={{
+      width: "80%",
+      "& .MuiOutlinedInput-root": {
+        minWidth: "150px",
+        "&.Mui-focused fieldset": {
+          border: "1px solid rgb(133, 133, 133, 2)",
+        },
+      },
+    }}
+    renderInput={(params) => <TextField {...params} />}
+    renderOption={(props, option) => (
+      <li {...props}>
+        <AboutUsLink
+          href={`#${option.id}`}
+          style={{
+            opacity: activeSection === option.id ? "100%" : "20%",
+            textDecoration: "none",
+            // textAlign: "justify",
+          }}
+        >
+          <AboutUsLinkWrap>
+            {activeSection === option.id ? (
+              <img src={Ellipse} alt="Ellipse" />
+            ) : (
+              ""
+            )}
+            <AboutUsLinkText>{option.label}</AboutUsLinkText>
+          </AboutUsLinkWrap>
+        </AboutUsLink>
+      </li>
+    )}
+  />
+) : (
+  <AboutUsLinkTextWrapper>
+    {aboutLinks.map((link) => (
+      <li key={link.id}>
+        <AboutUsLink
+          href={`#${link.id}`}
+          style={{
+            opacity: activeSection === link.id ? "100%" : "20%",
+            textDecoration: "none",
+          }}
+        >
+          <AboutUsLinkWrap>
+            {activeSection === link.id ? (
+              <img src={Ellipse} alt="Ellipse" />
+            ) : (
+              ""
+            )}
+            <AboutUsLinkText>{link.label}</AboutUsLinkText>
+          </AboutUsLinkWrap>
+        </AboutUsLink>
+      </li>
+    ))}
+  </AboutUsLinkTextWrapper>
+)}
+        </AboutUsSectionWrapHeader>
+
+            {/* <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">{links}</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+    
+                      onChange={handleChange}
+                    >
+                      {aboutLinks.map((link) => (
+                        <MenuItem>
+                          <AboutUsLink
+                            href={`#${link.id}`}
+                            style={{
+                              opacity: activeSection === link.id ? "100%" : "20%",
+                              textDecoration: "none",
+                            }}
+                          >
+                            <AboutUsLinkWrap>
+                              {activeSection === link.id ? (
+                                <img src={Ellipse} alt="Ellipse" />
+                              ) : (
+                                ""
+                              )}
+                              <AboutUsLinkText>{link.label}</AboutUsLinkText>
+                            </AboutUsLinkWrap>
+                          </AboutUsLink>
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Box> */}
 
             <AboutUsLinksButtonBack to={-1}>
               <img src={ButtonBack} alt="Button Back" />
             </AboutUsLinksButtonBack>
           </AboutUsLinksWrapper>
-          <div style={{ width: "550px" }}></div>
+          <AboutUsLine ></AboutUsLine>
           <AboutUsSectionsWrapper>
             <AboutUsOneSectionWrapper id="about-us">
               <AboutUsSectionMainText>about us</AboutUsSectionMainText>

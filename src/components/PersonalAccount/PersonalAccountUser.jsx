@@ -6,6 +6,7 @@ import {
   PersonalAccountUserButtonsWrap,
   PersonalAccountUserTitle,
   PersonalAccountUserWrap,
+  PersonalAccountWrap,
 } from "./PersonalAccountUser.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, isUserLogin, authToken } from "../../redux/auth/auth-selectors";
@@ -49,7 +50,7 @@ const PersonalAccountUser = () => {
     persistor.purge();
   };
   return (
-    <div style={{ paddingBottom: "160px" }}>
+    <PersonalAccountWrap >
       <PersonalAccountUserTitle>Personal account</PersonalAccountUserTitle>
       <PersonalAccountUserWrap>
         <PersonalAccountUserButtonsWrap>
@@ -80,7 +81,7 @@ const PersonalAccountUser = () => {
           {isActive === "orders" && <PersonalAccountOrders orders={orders} />}
         </div>
       </PersonalAccountUserWrap>
-    </div>
+    </PersonalAccountWrap>
   );
 };
 

@@ -3,16 +3,18 @@ import { Box, Grid } from "@mui/system";
 import styled from "styled-components";
 
 export const PersonalAccountWrap = styled.div`
-  padding-bottom: 160px;
+  padding-bottom: 100px;
   @media screen and (max-width: 1024px) {
-    padding-bottom: 160px;
+    padding-bottom: 70px;
   }
   @media screen and (max-width: 768px) {
-    padding-bottom: 100px;
+
   }
   @media screen and (max-width: 480px) {
+    padding-bottom: 0;
   }
 `;
+
 
 export const PersonalAccountUserWrap = styled.div`
   display: flex;
@@ -81,6 +83,7 @@ export const PersonalAccountUserButtonsWrap = styled.div`
 
 export const PersonalAccountUserButtons = styled.button`
   display: flex;
+  align-items: center;
   border: none;
   width: 297px;
   padding: 13px;
@@ -130,6 +133,7 @@ export const PersonalAccountUserButtons = styled.button`
     }
   }
   @media screen and (max-width: 480px) {
+    height: 70px;
   }
 `;
 
