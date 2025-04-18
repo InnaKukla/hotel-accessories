@@ -251,9 +251,10 @@ export const AboutUsOneSectionWrapper = styled.div`
     }
   }
   @media screen and (max-width: 480px) {
-    scroll-margin-top: 200px;
-    /* margin-top: 70px; */
-    margin-top: 200px;
+    scroll-margin-top: 300px;
+    margin-top: 100px;
+    margin-top: 0;
+    /* padding-top: 100px; */
     &:first-child {
       padding-top: 100px;
     }
@@ -288,6 +289,7 @@ export const AboutUsSectionMainText = styled.h2`
     color: rgba(0, 0, 0, 1);
   }
   @media screen and (max-width: 480px) {
+    padding-top: 30px;
   }
 `;
 

@@ -68,7 +68,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = 200;
+      const offset = 400;
       let current = aboutLinks[0].id;
 
       for (const link of aboutLinks) {
@@ -115,11 +115,14 @@ const AboutUs = () => {
   const handleScrollTo = (id) => {
     const el = document.getElementById(id);
     console.log(el);
-    
+    let offset;
     if (el) {
-      const offset = 600;
+      if (isMobile) {
+        offset = 300;
+      } else {
+        offset = 600;
+      }
      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-     
      window.scrollTo({
       top,
       behavior: "smooth"
@@ -159,7 +162,7 @@ const AboutUs = () => {
     }}
     renderInput={(params) => <TextField {...params} />}
     renderOption={(props, option) => (
-      <li {...props}>
+      <li {...props} key={option.id}>
         <AboutUsLink
           href={`#${option.id}`}
           style={{
@@ -385,8 +388,8 @@ const AboutUs = () => {
               </div>
             </AboutUsOneSectionWrapper>
 
-            <AboutUsOneSectionWrapper>
-              <AboutUsSectionMainText id="join-us">
+            <AboutUsOneSectionWrapper id="join-us">
+              <AboutUsSectionMainText >
                 Join Us in Elevating Your Lifestyle and Business
               </AboutUsSectionMainText>
               <AboutUsSectionText>
