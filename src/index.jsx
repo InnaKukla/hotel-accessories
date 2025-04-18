@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router";
+import { HashRouter } from "react-router";
 import { store, persistor } from "./redux/store";
 import "./index.css";
 import App from "./App";
@@ -12,9 +12,9 @@ root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <StrictMode>
-        <BrowserRouter basename="/hotel-accessories">
+        <HashRouter>
           <App />
-        </BrowserRouter>
+        </HashRouter>
       </StrictMode>
     </PersistGate>
   </Provider>
