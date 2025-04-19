@@ -164,7 +164,7 @@ const AboutUs = () => {
     renderOption={(props, option) => (
       <li {...props} key={option.id}>
         <AboutUsLink
-          href={`#${option.id}`}
+          to={`/about#${option.id}`}
           style={{
             opacity: activeSection === option.id ? "100%" : "20%",
             textDecoration: "none",

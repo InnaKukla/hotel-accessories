@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter } from "react-router";
+import { BrowserRouter } from "react-router";
 import { store, persistor } from "./redux/store";
 import "./index.css";
 import App from "./App";
@@ -12,9 +12,9 @@ root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <StrictMode>
-        <HashRouter>
+        <BrowserRouter>
           <App />
-        </HashRouter>
+        </BrowserRouter>
       </StrictMode>
     </PersistGate>
   </Provider>

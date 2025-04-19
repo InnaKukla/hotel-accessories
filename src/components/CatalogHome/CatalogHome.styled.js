@@ -11,7 +11,7 @@ min-width: 100vw;
     
   }
   @media screen and (max-width: 480px) {
-    padding-top: 100px;
+    padding-top: 50px;
   }
 `;
 
@@ -161,7 +161,6 @@ export const CatalogHomeListTextWrap = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
   @media screen and (max-width: 480px) {
-    padding-top: 100px;
   }
 `;
 

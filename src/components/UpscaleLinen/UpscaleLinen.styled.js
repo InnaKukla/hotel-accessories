@@ -9,6 +9,7 @@ export const UpscaleLinenSection = styled.section`
     padding-top: 100px;
   }
   @media screen and (max-width: 480px) {
+    padding-top: 50px;
   }
 `;
 
@@ -21,6 +22,7 @@ export const UpscaleLinenTextWrap = styled.div`
     width: 100%;
   }
   @media screen and (max-width: 480px) {
+    width: 100%;
   }
 `;
 
@@ -33,6 +35,7 @@ export const UpscaleLinenImg = styled.img`
     width: 100%;
   }
   @media screen and (max-width: 480px) {
+    width: 100%;
   }
 `;
 

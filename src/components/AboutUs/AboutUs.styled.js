@@ -122,7 +122,7 @@ export const AboutUsLinkTextWrapper = styled.ul`
   }
 `;
 
-export const AboutUsLink = styled.a`
+export const AboutUsLink = styled(Link)`
   text-decoration: none;
   text-align: center;
   @media screen and (max-width: 1024px) {
@@ -373,8 +373,9 @@ export const AboutUsSectionImgMiddle = styled.img`
     /* max-width: 334.5px; */
   }
   @media screen and (max-width: 768px) {
-    max-width: 66.9%;
+    /* max-width: 66.9%; */
     /* max-width: 214.1px; */
+    max-width: 66.85%;
   }
   @media screen and (max-width: 480px) {
   }
