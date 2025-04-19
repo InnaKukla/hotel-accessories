@@ -64,6 +64,9 @@ const PersonalAccountOrders = ({ orders }) => {
                           aria-controls="panel1-content"
                           id="panel1-header"
                           sx={{
+                            "& .Mui-expanded": {
+                              margin: 0,
+                            },
                             "& .MuiAccordionSummary-content": {
                               paddingRight: "25px",
                               margin: 0,

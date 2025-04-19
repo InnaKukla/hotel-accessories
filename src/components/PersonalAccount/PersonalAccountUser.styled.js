@@ -144,6 +144,7 @@ export const PersonalAccountLogoutButton = styled.button`
   justify-content: center;
   margin-top: 40px;
   gap: 5px;
+  text-decoration: none;
   @media screen and (max-width: 1024px) {
     margin-top: 0;
     display: flex;
