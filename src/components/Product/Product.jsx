@@ -49,6 +49,7 @@ const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector(selectProductsLoading);
   const product = useSelector(selectOneProduct);
+console.log(product);
 
   useEffect(() => {
     dispatch(productsOperations.fetchOneProduct({ id }));
