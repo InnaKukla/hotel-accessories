@@ -145,6 +145,10 @@ export const PersonalAccountLogoutButton = styled.button`
   margin-top: 40px;
   gap: 5px;
   text-decoration: none;
+  p{
+    text-decoration: none;
+    color: black;
+  }
   @media screen and (max-width: 1024px) {
     margin-top: 0;
     display: flex;
