@@ -119,11 +119,13 @@ const navigate = useNavigate();
               <ProductWrapper>
                 <ProductInformationWrapper>
                   <ProductInformImg>
-                    <img
-                      src={product.image}
-                      alt="product"
-                      style={{ maxWidth: "692px", maxHeight: "694px" }}
-                    />
+                   {product.image && (
+                     <img
+                     src={product?.image}
+                     alt="product"
+                     style={{ maxWidth: "692px", maxHeight: "694px" }}
+                   />
+                   )}
                   </ProductInformImg>
 
                   <div>

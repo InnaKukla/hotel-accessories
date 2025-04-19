@@ -78,6 +78,21 @@ export const HeaderAccessoriesItem = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 10px;
+  @media (max-width: 1280px) {
+
+  }
+
+  @media (max-width: 1024px) {
+    /* gap: 15px; */
+  }
+
+  @media (max-width: 768px) {
+   
+  }
+
+  @media (max-width: 480px) {
+    padding: 0;
+  }
   
 `;
 
