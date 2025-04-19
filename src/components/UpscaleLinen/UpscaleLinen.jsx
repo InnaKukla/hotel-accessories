@@ -8,6 +8,8 @@ import {
   UpscaleLinenTextWrap,
   UpscaleLinenItemWrap,
   UpscaleLinenTextWrapRevers,
+  UpscaleLinenImg,
+  UpscaleLinenItemWrapRevers,
 } from "./UpscaleLinen.styled";
 import CompositionTwoTowel from "../../assets/images/composition-two-towel-swans.jpg";
 import UpscaleLinenTowel from "../../assets/images/upscale-linen-towel.jpg";
@@ -22,10 +24,9 @@ const UpscaleLinen = () => {
           </UpscaleLinenTitle>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <UpscaleLinenItemWrap>
-            <img
+            <UpscaleLinenImg
               src={UpscaleLinenTowel}
               alt="Upscale Linen Towel"
-              style={{ width: "50%" }}
             />
             <UpscaleLinenTextWrap>
               <UpscaleLinenMainText className="upscale-linen-main-text">
@@ -40,7 +41,7 @@ const UpscaleLinen = () => {
             </UpscaleLinenTextWrap>
           </UpscaleLinenItemWrap>
 
-          <UpscaleLinenItemWrap>
+          <UpscaleLinenItemWrapRevers>
             <UpscaleLinenTextWrapRevers>
               <UpscaleLinenMainText className="upscale-linen-main-text">
                 Upscale Linen
@@ -52,12 +53,11 @@ const UpscaleLinen = () => {
                 setting a new benchmark for excellence.
               </UpscaleLinenText>
             </UpscaleLinenTextWrapRevers>
-            <img
+            <UpscaleLinenImg
               src={CompositionTwoTowel}
               alt="Composition Two Towel"
-              style={{ width: "50%" }}
             />
-          </UpscaleLinenItemWrap>
+          </UpscaleLinenItemWrapRevers>
         </div>
 
       </Container>
