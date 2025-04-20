@@ -57,7 +57,7 @@ const Basket = () => {
   const product = useSelector(selectOneProduct);
   const cartList = useSelector(selectCartsList);
   const [order, setOrder] = useState([]);
-  console.log(user);
+
   
   useEffect(() => {
     dispatch(cartOperations.fetchCartProducts(user?.id));

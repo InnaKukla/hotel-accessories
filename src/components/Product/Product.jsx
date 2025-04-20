@@ -17,11 +17,13 @@ import {
   ProductInformationWrapper,
   ProductInformCodeWrap,
   ProductInformColor,
+  ProductInformColorWrap,
   ProductInformDescriptionLine,
   ProductInformDescriptionMainText,
   ProductInformDescriptionText,
   ProductInformDescriptionWrap,
   ProductInformImg,
+  ProductInformImgWrap,
   ProductInformName,
   ProductInformPrice,
   ProductInformSet,
@@ -38,7 +40,7 @@ import { selectFavoritesIsFavorite } from "../../redux/favorites/favorites-selec
 import cartOperations from "../../redux/cart/cart-operations";
 
 const Product = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const isFavorite = useSelector(selectFavoritesIsFavorite);
   const [isFavoriteProduct, setIsFavoriteProduct] = useState(isFavorite);
   const user = useSelector(getUser);
@@ -49,12 +51,13 @@ const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector(selectProductsLoading);
   const product = useSelector(selectOneProduct);
-console.log(product);
 
   useEffect(() => {
-    dispatch(productsOperations.fetchOneProduct({ id }));
-    dispatch(favoritesOperations.fetchOneFavorites(id));
-
+    const fetch = async () => {
+      await dispatch(productsOperations.fetchOneProduct({ id }));
+      await dispatch(favoritesOperations.fetchOneFavorites(id));
+    };
+    fetch();
     setIsFavoriteProduct(isFavorite);
     window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -62,25 +65,26 @@ console.log(product);
   }, []);
 
   useEffect(() => {
-    dispatch(productsOperations.fetchOneProduct({ id }));
-    dispatch(favoritesOperations.fetchOneFavorites(id));
-
+    const fetch = async () => {
+      await dispatch(productsOperations.fetchOneProduct({ id }));
+      await dispatch(favoritesOperations.fetchOneFavorites(id));
+    };
+    fetch();
     setIsFavoriteProduct(isFavorite);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [dispatch, id, isFavorite]);
 
   const handleAddToCart = async () => {
-    
     if (!isLoggedIn) {
       console.log(!isLoggedIn, "isLoggedIn");
       navigate(`/account`);
     } else {
       console.log(id);
-      
+
       await dispatch(
         cartOperations.addCartProduct({ productId: id, quantity: 1 })
       );
-      navigate(`/basket`, { state: { id: id }});
+      navigate(`/basket`, { state: { id: id } });
     }
   };
 
@@ -98,13 +102,12 @@ console.log(product);
           userId: user.id,
           productId: id,
         };
-  
+
         await dispatch(favoritesOperations.addFavorite(data));
         await dispatch(favoritesOperations.fetchOneFavorites(id));
       }
       navigate(`/favorites`);
     }
-    
   };
   return (
     <>
@@ -119,15 +122,9 @@ console.log(product);
             ) : (
               <ProductWrapper>
                 <ProductInformationWrapper>
-                  <ProductInformImg>
-                   {product.image && (
-                     <img
-                     src={product?.image}
-                     alt="product"
-                     style={{ maxWidth: "692px", maxHeight: "694px" }}
-                   />
-                   )}
-                  </ProductInformImg>
+                  <ProductInformImgWrap>
+                    <ProductInformImg src={product?.image} alt="product" />
+                  </ProductInformImgWrap>
 
                   <div>
                     <div>
@@ -142,20 +139,14 @@ console.log(product);
                       </ProductInformCodeWrap>
 
                       <ProductInformName>{product.name}</ProductInformName>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "flex-end",
-                          borderBottom: "1px solid rgba(35, 81, 96, 0.2)",
-                          justifyContent: "space-between",
-                        }}
-                      >
+                      <ProductInformColorWrap>
                         <ProductInformColor>
                           Color: <span>{product.color?.join(", ")}</span>
                         </ProductInformColor>
                         <div style={{ display: "flex", gap: "5px" }}>
                           {product.color?.map((color) => (
                             <div
+                              key={color}
                               style={{
                                 width: "15px",
                                 height: "15px",
@@ -166,7 +157,7 @@ console.log(product);
                             ></div>
                           ))}
                         </div>
-                      </div>
+                      </ProductInformColorWrap>
 
                       <ProductInformSize>
                         Size: <span>{product.size}</span>
@@ -177,18 +168,18 @@ console.log(product);
 
                       <ProductInformPrice>${product.price}</ProductInformPrice>
                       <ProductButtonWrap>
-                          <ProductButton onClick={handleAddToCart}>
-                            <ProductButtonAdd style={{ display: "flex" }}>
-                              <p>Add to cart</p>
-                            </ProductButtonAdd>
-                          </ProductButton>
+                        <ProductButton onClick={handleAddToCart}>
+                          <ProductButtonAdd style={{ display: "flex" }}>
+                            <p>Add to cart</p>
+                          </ProductButtonAdd>
+                        </ProductButton>
 
-                          <ProductButtonTrolley
-                            isactive={isFavoriteProduct ? true : undefined}
-                            onClick={handleFavorite}
-                          >
-                            <Favorite />
-                          </ProductButtonTrolley>
+                        <ProductButtonTrolley
+                          isactive={isFavoriteProduct ? true : undefined}
+                          onClick={handleFavorite}
+                        >
+                          <Favorite />
+                        </ProductButtonTrolley>
                       </ProductButtonWrap>
                     </div>
 
