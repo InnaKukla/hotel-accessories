@@ -1,56 +1,50 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import  {instance}  from '../instance';
+import { instance } from "../instance";
 
 const fetchAllProducts = createAsyncThunk(
-    'allProducts /fetch',
-    async ({page}, thunkApi) => {
-      
-      try {
-        const response = await instance.get(`/products`, {
-          params: {
-            page
-          },
-        });
-  
-        return response.data;
-      } catch (error) {
-        return thunkApi.rejectWithValue(error.response.data.message);
-      }
-    }
-  );
+  "allProducts /fetch",
+  async ({ page }, thunkApi) => {
+    try {
+      const response = await instance.get(`/products`, {
+        params: {
+          page,
+        },
+      });
 
-  const fetchOneProduct = createAsyncThunk(
-    'oneProduct/fetch',
-    async ({ id }, thunkApi) => {
-  console.log(id);
-  
-      try {
-        const response = await instance.get(`/products/${id}`);
-        return response.data;
-      } catch (error) {
-        return thunkApi.rejectWithValue(error.response.data.message);
-      }
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data.message);
     }
-  );
-  const fetchProductsByCategory = createAsyncThunk(
-    'allProductsByCategory /fetch',
-    async (category, thunkApi) => {
-      
-      try {
-        const response = await instance.get(`/products/category/${category}`, {
-        });
-        return response.data;
-      } catch (error) {
-        return thunkApi.rejectWithValue(error.response.data.message);
-      }
+  }
+);
+
+const fetchOneProduct = createAsyncThunk(
+  "oneProduct/fetch",
+  async ({ id }, thunkApi) => {
+    try {
+      const response = await instance.get(`/products/${id}`);
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data.message);
     }
-  );
-  const productsOperations = {
-    fetchAllProducts,
-    fetchOneProduct,
-    fetchProductsByCategory
-  };
-  
-  export default productsOperations;
-  
+  }
+);
+const fetchProductsByCategory = createAsyncThunk(
+  "allProductsByCategory /fetch",
+  async (category, thunkApi) => {
+    try {
+      const response = await instance.get(`/products/category/${category}`, {});
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+const productsOperations = {
+  fetchAllProducts,
+  fetchOneProduct,
+  fetchProductsByCategory,
+};
+
+export default productsOperations;

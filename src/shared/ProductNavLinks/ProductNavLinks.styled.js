@@ -1,32 +1,28 @@
+import { Link } from "react-router";
 import styled from "styled-components";
 
 export const ProductNavLinksWrapper = styled.div`
  padding-bottom: 27px;
     padding-top: 27px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     @media screen and (max-width: 1024px) {
-      padding-bottom: 27px;
-    padding-top: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
   }
   @media screen and (max-width: 768px) {
-    padding-bottom: 27px;
-    padding-top: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
   }
   @media screen and (max-width: 480px) {
+
   }
 `;
 
 export const ProductNavLinksList = styled.div`
  display: flex;
  gap: 15px;
+ align-items: center;
     @media screen and (max-width: 1024px) {
 
   }
@@ -41,6 +37,7 @@ export const ProductNavLinksList = styled.div`
 export const ProductNavLinkItem = styled.div`
   display: flex;
     gap: 10px;
+    align-items: baseline;
     opacity: ${(props) => (props.page === 'basket' ? 1 : 0.5)};
     transform: opacity 0.3s ease;
     p {
@@ -86,6 +83,7 @@ export const ProductNavLinkItem = styled.div`
 export const ProductNavLinkItemName = styled.div`
   display: flex;
     gap: 10px;
+    align-items: center;
     opacity: ${(props) => (props.page === 'basket' ? 0.5 : 1)};
     transform: opacity 0.3s ease;
     p {
@@ -126,4 +124,18 @@ export const ProductNavLinkItemName = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
+`;
+
+export const ProductNavLinksBackButton = styled(Link)`
+ 
+    @media screen and (max-width: 1024px) {
+
+  }
+  @media screen and (max-width: 768px) {
+
+  }
+  @media screen and (max-width: 480px) {
+    margin-left: auto;
+  }
+
 `;
