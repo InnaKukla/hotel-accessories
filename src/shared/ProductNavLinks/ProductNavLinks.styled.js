@@ -15,7 +15,8 @@ export const ProductNavLinksWrapper = styled.div`
     
   }
   @media screen and (max-width: 480px) {
-
+flex-direction: column;
+align-items: flex-start;
   }
 `;
 

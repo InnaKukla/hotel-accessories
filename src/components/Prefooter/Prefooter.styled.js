@@ -230,6 +230,7 @@ export const PrefooterFormButton = styled.button`
     background-color: rgba(35, 81, 96, 1);
     color: rgba(255, 255, 255, 1);
     margin-top: 49px;
+    padding: 10px;
   @media screen and (max-width: 1024px) {
     width: 100%;
     font-family: Helvetica;
