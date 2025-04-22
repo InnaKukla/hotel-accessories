@@ -150,6 +150,7 @@ const AboutUs = () => {
                     }
                   }}
                   disablePortal
+                  readOnly
                   options={aboutLinks}
                   getOptionLabel={(option) => option.label}
                   sx={{
