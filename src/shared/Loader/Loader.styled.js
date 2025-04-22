@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -10,6 +10,6 @@ export const Container = styled.div`
   @media screen and (max-width: 768px) {
   }
   @media screen and (max-width: 480px) {
-   align-items: normal;
+    margin-top: -100px;
   }
 `;

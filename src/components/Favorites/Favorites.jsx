@@ -50,7 +50,6 @@ const Favorites = () => {
     const fetch = async () => {
       await dispatch(favoritesOperations.fetchAllFavorites(user?.id));
     };
-
     fetch();
   }, [dispatch, user]);
 

@@ -27,6 +27,8 @@ const headerAccessoriesList = [
 
 const Header = () => {
   const { pathname } = useLocation();
+  console.log(pathname);
+  
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -90,7 +92,7 @@ const Header = () => {
             <img src={Logo} alt="logo" />
           </NavLink>
 
-          <HeaderNavWrap >
+          <HeaderNavWrap className="header-nav-wrap">
             <NavLink
               to="/about"
               style={{
@@ -99,17 +101,17 @@ const Header = () => {
             >
               <HeaderAboutUs>about us</HeaderAboutUs>
             </NavLink>
-            <HeaderNav className="header-nav">
+            <HeaderNav>
               {/* <HeaderNavLink>
                 <SearchIcon />
               </HeaderNavLink> */}
-              <HeaderNavLink to="/favorites">
+              <HeaderNavLink $active={pathname === "/favorites"} to="/favorites">
                 <FavoriteIcon />
               </HeaderNavLink>
-              <HeaderNavLink to="/basket">
+              <HeaderNavLink $active={pathname === "/basket"} to="/basket">
                 <BagIcon />
               </HeaderNavLink>
-              <HeaderNavLink to="/account">
+              <HeaderNavLink $active={pathname === "/account"} to="/account">
                 <UserIcon />
               </HeaderNavLink>
             </HeaderNav>

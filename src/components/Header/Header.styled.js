@@ -78,21 +78,6 @@ export const HeaderAccessoriesItem = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 10px;
-  @media (max-width: 1280px) {
-
-  }
-
-  @media (max-width: 1024px) {
-    /* gap: 15px; */
-  }
-
-  @media (max-width: 768px) {
-   
-  }
-
-  @media (max-width: 480px) {
-    padding: 0;
-  }
   
 `;
 
@@ -195,6 +180,10 @@ export const HeaderNav = styled.div`
 `;
 
 export const HeaderNavLink = styled(Link)`
+svg {
+  fill: ${({$active}) => ($active ? 'rgb(35 81 96 / 80%)' : 'none')};
+}
+
   :hover {
     fill: rgb(35 81 96 / 80%);
 

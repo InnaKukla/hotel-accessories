@@ -5,6 +5,7 @@ import  {instance}  from '../instance';
 const fetchAllFavorites = createAsyncThunk(
     'fetchAllFavorites /fetch',
     async ( userId , thunkApi) => {
+      console.log(userId);
       
       try {
         const response = await instance.get('/favorites', {userId: userId} );

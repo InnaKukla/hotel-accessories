@@ -5,7 +5,7 @@ const authMiddleware = (req, res, next) => {
   // console.log("Headers:", req.headers);
 
   const authHeader = req.headers["authorization"]; // Переконуємось, що пишемо все в нижньому регістрі
-  // console.log("Authorization header:", authHeader); // Логуємо значення
+  console.log("Authorization header:", authHeader); // Логуємо значення
 
   if (!authHeader) {
     return res.status(401).json({ message: "No token, authorization denied" });

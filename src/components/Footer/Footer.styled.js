@@ -43,6 +43,8 @@ export const FooterWrapperText = styled.div`
     align-items: flex-end;
   }
   @media screen and (max-width: 480px) {
+    margin-top: 60px;
+    grid-row-gap: 15px;
   }
 `;
 
