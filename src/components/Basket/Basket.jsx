@@ -60,7 +60,10 @@ const Basket = () => {
 
   
   useEffect(() => {
-    dispatch(cartOperations.fetchCartProducts(user?.id));
+   const fetch = async () => {
+   await dispatch(cartOperations.fetchCartProducts(user?.id));
+   };
+   fetch();
   }, [dispatch, user?.id]);
 
   useEffect(() => {
