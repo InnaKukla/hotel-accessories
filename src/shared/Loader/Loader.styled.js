@@ -10,6 +10,6 @@ export const Container = styled.div`
   @media screen and (max-width: 768px) {
   }
   @media screen and (max-width: 480px) {
-    align-items: baseline;
+   align-items: normal;
   }
 `;
