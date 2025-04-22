@@ -123,7 +123,7 @@ const Product = () => {
               <ProductWrapper>
                 <ProductInformationWrapper>
                   <ProductInformImgWrap>
-                    <ProductInformImg src={product?.image} alt="product" />
+                    <ProductInformImg src={product?.image} alt="product" loading="lazy"/>
                   </ProductInformImgWrap>
 
                   <div>

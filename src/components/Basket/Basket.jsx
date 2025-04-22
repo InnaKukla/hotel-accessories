@@ -199,6 +199,7 @@ const Basket = () => {
                           <BasketProductItemImg
                             src={item?.product?.image}
                             alt={item.product?.name}
+                            loading="lazy"
                           />
                         </div>
                         <BasketProductItemWrap>
@@ -254,7 +255,7 @@ const Basket = () => {
                               <BasketProductChooseForBuySize>
                                 <span>size</span>
                                 <div>
-                                  <img src={SizeIcon} alt="Size Icon" width={12}/>
+                                  <img src={SizeIcon} alt="Size Icon" width={12} loading="lazy"/>
                                   <p>{item.product?.size}</p>
                                 </div>
                               </BasketProductChooseForBuySize>
@@ -272,7 +273,7 @@ const Basket = () => {
                                 handleRemoveFromCart(item?.product?._id)
                               }
                             >
-                              <img src={Trash} alt="Trash" />
+                              <img src={Trash} alt="Trash" loading="lazy"/>
                             </BasketProductDeleteButton>
                             <h2>
                               total price:{" "}

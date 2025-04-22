@@ -44,10 +44,7 @@ import {
 } from "./AboutUs.styled";
 import { useMediaQuery } from "react-responsive";
 import { Box } from "@mui/system";
-import {
-  Autocomplete,
-  TextField,
-} from "@mui/material";
+import { Autocomplete, TextField } from "@mui/material";
 
 const aboutLinks = [
   { id: "about-us", label: "About us" },
@@ -122,11 +119,11 @@ const AboutUs = () => {
       } else {
         offset = 600;
       }
-     const top = el.getBoundingClientRect().top + window.scrollY - offset;
-     window.scrollTo({
-      top,
-      behavior: "smooth"
-     })  
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
       // el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
@@ -136,78 +133,82 @@ const AboutUs = () => {
       <Container>
         <AboutUsWrapper>
           <AboutUsLinksWrapper positionSection={activeSection} top={position}>
-        <AboutUsSectionWrapHeader>
-        <AboutUsLinkImg src={LogoAboutUs} alt="Logo About Us" />
+            <AboutUsSectionWrapHeader>
+              <AboutUsLinkImg
+                src={LogoAboutUs}
+                alt="Logo About Us"
+                loading="lazy"
+              />
 
-{isMobile ? (
-  <Autocomplete
-    value={value}
-    onChange={(event, newValue) => {
-      if (newValue) {
-        setValue(newValue);
-        handleScrollTo(newValue.id);
-      }
-    }}
-    disablePortal
-    options={aboutLinks}
-    getOptionLabel={(option) => option.label}
-    sx={{
-      width: "80%",
-      "& .MuiOutlinedInput-root": {
-        minWidth: "150px",
-        "&.Mui-focused fieldset": {
-          border: "1px solid rgb(133, 133, 133, 2)",
-        },
-      },
-    }}
-    renderInput={(params) => <TextField {...params} />}
-    renderOption={(props, option) => (
-      <li {...props} key={option.id}>
-        <AboutUsLink
-          to={`/about#${option.id}`}
-          style={{
-            opacity: activeSection === option.id ? "100%" : "20%",
-            textDecoration: "none",
-            // textAlign: "justify",
-          }}
-        >
-          <AboutUsLinkWrap>
-            {activeSection === option.id ? (
-              <img src={Ellipse} alt="Ellipse" />
-            ) : (
-              ""
-            )}
-            <AboutUsLinkText>{option.label}</AboutUsLinkText>
-          </AboutUsLinkWrap>
-        </AboutUsLink>
-      </li>
-    )}
-  />
-) : (
-  <AboutUsLinkTextWrapper>
-    {aboutLinks.map((link) => (
-      <li key={link.id}>
-        <AboutUsLink
-          href={`#${link.id}`}
-          style={{
-            opacity: activeSection === link.id ? "100%" : "20%",
-            textDecoration: "none",
-          }}
-        >
-          <AboutUsLinkWrap>
-            {activeSection === link.id ? (
-              <img src={Ellipse} alt="Ellipse" />
-            ) : (
-              ""
-            )}
-            <AboutUsLinkText>{link.label}</AboutUsLinkText>
-          </AboutUsLinkWrap>
-        </AboutUsLink>
-      </li>
-    ))}
-  </AboutUsLinkTextWrapper>
-)}
-        </AboutUsSectionWrapHeader>
+              {isMobile ? (
+                <Autocomplete
+                  value={value}
+                  onChange={(event, newValue) => {
+                    if (newValue) {
+                      setValue(newValue);
+                      handleScrollTo(newValue.id);
+                    }
+                  }}
+                  disablePortal
+                  options={aboutLinks}
+                  getOptionLabel={(option) => option.label}
+                  sx={{
+                    width: "80%",
+                    "& .MuiOutlinedInput-root": {
+                      minWidth: "150px",
+                      "&.Mui-focused fieldset": {
+                        border: "1px solid rgb(133, 133, 133, 2)",
+                      },
+                    },
+                  }}
+                  renderInput={(params) => <TextField {...params} />}
+                  renderOption={(props, option) => (
+                    <li {...props} key={option.id}>
+                      <AboutUsLink
+                        to={`/about#${option.id}`}
+                        style={{
+                          opacity: activeSection === option.id ? "100%" : "20%",
+                          textDecoration: "none",
+                          // textAlign: "justify",
+                        }}
+                      >
+                        <AboutUsLinkWrap>
+                          {activeSection === option.id ? (
+                            <img src={Ellipse} alt="Ellipse" />
+                          ) : (
+                            ""
+                          )}
+                          <AboutUsLinkText>{option.label}</AboutUsLinkText>
+                        </AboutUsLinkWrap>
+                      </AboutUsLink>
+                    </li>
+                  )}
+                />
+              ) : (
+                <AboutUsLinkTextWrapper>
+                  {aboutLinks.map((link) => (
+                    <li key={link.id}>
+                      <AboutUsLink
+                        href={`#${link.id}`}
+                        style={{
+                          opacity: activeSection === link.id ? "100%" : "20%",
+                          textDecoration: "none",
+                        }}
+                      >
+                        <AboutUsLinkWrap>
+                          {activeSection === link.id ? (
+                            <img src={Ellipse} alt="Ellipse" />
+                          ) : (
+                            ""
+                          )}
+                          <AboutUsLinkText>{link.label}</AboutUsLinkText>
+                        </AboutUsLinkWrap>
+                      </AboutUsLink>
+                    </li>
+                  ))}
+                </AboutUsLinkTextWrapper>
+              )}
+            </AboutUsSectionWrapHeader>
 
             {/* <Box sx={{ minWidth: 120 }}>
                   <FormControl fullWidth>
@@ -246,7 +247,7 @@ const AboutUs = () => {
               <img src={ButtonBack} alt="Button Back" />
             </AboutUsLinksButtonBack>
           </AboutUsLinksWrapper>
-          <AboutUsLine ></AboutUsLine>
+          <AboutUsLine></AboutUsLine>
           <AboutUsSectionsWrapper>
             <AboutUsOneSectionWrapper id="about-us">
               <AboutUsSectionMainText>about us</AboutUsSectionMainText>
@@ -257,7 +258,7 @@ const AboutUs = () => {
                 partnership that becomes an integral part of your hospitality
                 space, or getaway retreat.
               </AboutUsSectionText>
-              <AboutUsSectionImgLarge src={AboutUsImg} alt="about us img" />
+              <AboutUsSectionImgLarge src={AboutUsImg} alt="about us img" loading="lazy" />
             </AboutUsOneSectionWrapper>
 
             <AboutUsOneSectionWrapper id="our-vision">
@@ -273,10 +274,12 @@ const AboutUs = () => {
                 <AboutUsSectionImgSmall
                   src={OurVisionBadMattress}
                   alt="Our Vision Bad Mattress"
+                  loading="lazy"
                 />
                 <AboutUsSectionImgMiddle
                   src={OurVisionBad}
                   alt="Our Vision Bad"
+                  loading="lazy"
                 />
               </div>
             </AboutUsOneSectionWrapper>
@@ -294,10 +297,12 @@ const AboutUs = () => {
                 <AboutUsSectionImgMiddle
                   src={CoreValuesBlanket}
                   alt="Core Values Blanket"
+                  loading="lazy"
                 />
                 <AboutUsSectionImgSmall
                   src={CoreValuesPillow}
                   alt="Core Values Pillow"
+                  loading="lazy"
                 />
               </div>
             </AboutUsOneSectionWrapper>
@@ -314,6 +319,7 @@ const AboutUs = () => {
               <AboutUsSectionImgLarge
                 src={OurCollection}
                 alt="Our Collection"
+                loading="lazy"
               />
             </AboutUsOneSectionWrapper>
 
@@ -332,14 +338,17 @@ const AboutUs = () => {
                 <img
                   src={PlushBathEssentialsGirl}
                   alt="Plush Bath Essentials Girl"
+                  loading="lazy"
                 />
                 <img
                   src={PlushBathEssentialsTowel}
                   alt="Plush Bath Essentials Towel"
+                  loading="lazy"
                 />
                 <img
                   src={PlushBathEssentialsBathrobe}
                   alt="Plush Bath Essentials Bathrobe"
+                  loading="lazy"
                 />
               </AboutUsSectionImgTrio>
             </AboutUsOneSectionWrapper>
@@ -359,10 +368,12 @@ const AboutUs = () => {
                 <AboutUsSectionImgMiddle
                   src={KitchenEleganceBeyondTowel}
                   alt="Kitchen Elegance Beyond Towel"
+                  loading="lazy"
                 />
                 <AboutUsSectionImgSmall
                   src={KitchenEleganceBeyondTowels}
                   alt="Kitchen Elegance Beyond Towels"
+                  loading="lazy"
                 />
               </div>
             </AboutUsOneSectionWrapper>
@@ -384,12 +395,13 @@ const AboutUs = () => {
                 <AboutUsSectionImgLarge
                   src={HospitalitySolutions}
                   alt="Comprehensive Hospitality Solutions"
+                  loading="lazy"
                 />
               </div>
             </AboutUsOneSectionWrapper>
 
             <AboutUsOneSectionWrapper id="join-us">
-              <AboutUsSectionMainText >
+              <AboutUsSectionMainText>
                 Join Us in Elevating Your Lifestyle and Business
               </AboutUsSectionMainText>
               <AboutUsSectionText>
@@ -403,6 +415,7 @@ const AboutUs = () => {
               <AboutUsSectionImgLarge
                 src={JoinUs}
                 alt="Join Us in Elevating Your Lifestyle and Business"
+                loading="lazy"
               />
             </AboutUsOneSectionWrapper>
           </AboutUsSectionsWrapper>

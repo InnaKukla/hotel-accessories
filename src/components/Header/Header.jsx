@@ -90,7 +90,7 @@ const Header = () => {
             <img src={Logo} alt="logo" />
           </NavLink>
 
-          <HeaderNavWrap className="header-nav-wrap">
+          <HeaderNavWrap >
             <NavLink
               to="/about"
               style={{

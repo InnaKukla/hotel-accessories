@@ -146,6 +146,7 @@ const Catalog = () => {
                         <CatalogProductsItemImg
                           src={item.image}
                           alt={item.name}
+                          loading="lazy"
                         />
                       </Link>
                       <CatalogProductsItemWrap>
@@ -169,7 +170,7 @@ const Catalog = () => {
                           <CatalogProductsBuyWrap
                             onClick={() => handleAddToCart(item._id)}
                           >
-                            <img src={Trolley} alt="Trolley" />
+                            <img src={Trolley} alt="Trolley" loading="lazy"/>
                           </CatalogProductsBuyWrap>
                         </Link>
                       </CatalogProductsItemWrap>

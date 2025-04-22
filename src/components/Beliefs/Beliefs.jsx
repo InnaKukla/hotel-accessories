@@ -42,6 +42,7 @@ const Beliefs = () => {
                 src={item.image}
                 alt={item.title}
                 style={{ maxWidth: "460px" }}
+                loading="lazy"
               />
               <div style={{ padding: "0 20px 20px 20px" }}>
                 <BeliefsItemTitle>{item.title}</BeliefsItemTitle>

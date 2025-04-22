@@ -18,15 +18,15 @@ const UpscaleLinen = () => {
   return (
     <UpscaleLinenSection>
       <Container>
-      
-          <UpscaleLinenTitle>
-            Define Excellence in Every Room with Our Luxurious Linens
-          </UpscaleLinenTitle>
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <UpscaleLinenTitle>
+          Define Excellence in Every Room with Our Luxurious Linens
+        </UpscaleLinenTitle>
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <UpscaleLinenItemWrap>
             <UpscaleLinenImg
               src={UpscaleLinenTowel}
               alt="Upscale Linen Towel"
+              loading="lazy"
             />
             <UpscaleLinenTextWrap>
               <UpscaleLinenMainText className="upscale-linen-main-text">
@@ -56,10 +56,10 @@ const UpscaleLinen = () => {
             <UpscaleLinenImg
               src={CompositionTwoTowel}
               alt="Composition Two Towel"
+              loading="lazy"
             />
           </UpscaleLinenItemWrapRevers>
         </div>
-
       </Container>
     </UpscaleLinenSection>
   );

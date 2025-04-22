@@ -116,7 +116,7 @@ const Favorites = () => {
                           <CatalogProductsBuyWrap
                             onClick={() => handleAddToCart(item._id)}
                           >
-                            <img src={Trolley} alt="Trolley" />
+                            <img src={Trolley} alt="Trolley" loading="lazy"/>
                           </CatalogProductsBuyWrap>
                         </Link>
                       </CatalogProductsItemWrap>

@@ -80,6 +80,7 @@ const PersonalAccountOrders = ({ orders }) => {
                                   src={product?.image}
                                   alt={product?.name}
                                   style={{ maxHeight: "110px" }}
+                                  loading="lazy"
                                 />
                               </div>
                               <PersonalAccountOrderTitleWrap>
