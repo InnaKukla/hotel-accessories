@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { Container } from "../Header/Header.styled";
 import {
   ContainerFavorites,
@@ -40,7 +40,10 @@ const Favorites = () => {
   }, [navigate, user]);
 
   useEffect(() => {
-    dispatch(favoritesOperations.fetchAllFavorites(user?.id));
+    const fetch = async () => {
+      await dispatch(favoritesOperations.fetchAllFavorites(user?.id));
+    };
+    fetch();
   }, [dispatch, user]);
 
   useEffect(() => {
@@ -56,9 +59,10 @@ const Favorites = () => {
   };
 
   const handleAddToCart = async (id) => {
-  
-    await dispatch(cartOperations.addCartProduct({productId: id, quantity: 1}));
-};
+    await dispatch(
+      cartOperations.addCartProduct({ productId: id, quantity: 1 })
+    );
+  };
 
   return (
     <FavoritesSection>
@@ -93,10 +97,7 @@ const Favorites = () => {
                         style={{ display: "flex" }}
                         state={{ id: item._id }}
                       >
-                        <FavoritesItemImg
-                          src={item.image}
-                          alt={item.name}
-                        />
+                        <FavoritesItemImg src={item.image} alt={item.name} />
                       </Link>
                       <CatalogProductsItemWrap>
                         <Link to={`/products/${item._id}`}>
@@ -116,7 +117,7 @@ const Favorites = () => {
                           <CatalogProductsBuyWrap
                             onClick={() => handleAddToCart(item._id)}
                           >
-                            <img src={Trolley} alt="Trolley" loading="lazy"/>
+                            <img src={Trolley} alt="Trolley" loading="lazy" />
                           </CatalogProductsBuyWrap>
                         </Link>
                       </CatalogProductsItemWrap>
