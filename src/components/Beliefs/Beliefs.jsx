@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  BeliefsImg,
   BeliefsItem,
   BeliefsItemText,
   BeliefsItemTitle,
@@ -38,10 +39,9 @@ const Beliefs = () => {
         <BeliefsList>
           {beliefsList?.map((item) => (
             <BeliefsItem key={item.title}>
-              <img
+              <BeliefsImg
                 src={item.image}
                 alt={item.title}
-                style={{ maxWidth: "460px" }}
                 loading="lazy"
               />
               <div style={{ padding: "0 20px 20px 20px" }}>
