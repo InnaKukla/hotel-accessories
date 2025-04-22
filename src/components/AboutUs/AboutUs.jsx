@@ -150,7 +150,6 @@ const AboutUs = () => {
                     }
                   }}
                   disablePortal
-                  readOnly
                   options={aboutLinks}
                   getOptionLabel={(option) => option.label}
                   sx={{
@@ -162,7 +161,16 @@ const AboutUs = () => {
                       },
                     },
                   }}
-                  renderInput={(params) => <TextField {...params} />}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      inputRef={(input) => {
+                        if (input) {
+                          input.readOnly = true;
+                        }
+                      }}
+                    />
+                  )}
                   renderOption={(props, option) => (
                     <li {...props} key={option.id}>
                       <AboutUsLink
@@ -259,7 +267,11 @@ const AboutUs = () => {
                 partnership that becomes an integral part of your hospitality
                 space, or getaway retreat.
               </AboutUsSectionText>
-              <AboutUsSectionImgLarge src={AboutUsImg} alt="about us img" loading="lazy" />
+              <AboutUsSectionImgLarge
+                src={AboutUsImg}
+                alt="about us img"
+                loading="lazy"
+              />
             </AboutUsOneSectionWrapper>
 
             <AboutUsOneSectionWrapper id="our-vision">
