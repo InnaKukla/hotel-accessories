@@ -269,7 +269,7 @@ const Basket = () => {
 
                           <BasketProductTotalPriceItem>
                             <BasketProductDeleteButton
-                              onClick={handleRemoveFromCart(item?.product?._id)}
+                              onClick={() => handleRemoveFromCart(item?.product?._id)}
                             >
                               <img src={Trash} alt="Trash" loading="lazy"/>
                             </BasketProductDeleteButton>
