@@ -7,7 +7,7 @@ padding-top: 416px;
     background-size: cover;
     font-family: Rebelton;
     font-size: 24px;
-    background-image: url("./img/hero-bg.jpg");
+    background-image: url("./img/hero-bg.webp");
   @media screen and (max-width: 1024px) {
     padding-top: 170px;
     padding-bottom: 170px;
@@ -15,7 +15,7 @@ padding-top: 416px;
     background-size: cover;
     font-family: Rebelton;
     font-size: 20px;
-    background-image: url("./img/hero-bg.jpg");
+    background-image: url("./img/hero-bg.webp");
   }
   @media screen and (max-width: 768px) {
     padding-top: 170px;
@@ -24,7 +24,7 @@ padding-top: 416px;
   background-size: cover;
   font-family: Rebelton;
   font-size: 20px;
-  background-image: url("./img/hero-bg.jpg");
+  background-image: url("./img/hero-bg.webp");
   }
   @media screen and (max-width: 480px) {
     /* padding-top: 170px;
