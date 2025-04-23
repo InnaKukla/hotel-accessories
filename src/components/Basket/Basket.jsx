@@ -190,7 +190,7 @@ const Basket = () => {
         <BasketSection>
           <ContainerBasket>
             <ProductNavLinks item={product} page="basket" />
-            <BasketWrap>
+            {loading ? <Loader/> : (<BasketWrap>
               <BasketProductsList>
                 {cartList.length === 0 ? (
                   <p>Basket is empty.</p>
@@ -291,7 +291,7 @@ const Basket = () => {
                   </>
                 )}
               </BasketProductsList>
-            </BasketWrap>
+            </BasketWrap>)}
 
             <BasketOrderWrapper>
               <BasketFormWrapper className="prefooter-form-wrapper">

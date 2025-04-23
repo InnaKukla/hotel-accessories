@@ -4,15 +4,17 @@ import {
   ButtonSave,
   InfoWrapper,
 } from "./PersonalAccountUser.styled";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Box, Grid } from "@mui/system";
 import { TextField } from "@mui/material";
 import { updateUserProfile } from "../../redux/auth/auth-operations";
 import _ from "lodash";
+import Loader from "../../shared/Loader/Loader";
+import { isLoading } from "../../redux/auth/auth-selectors";
 
 const PersonalAccountUserProfile = ({ user }) => {
   const dispatch = useDispatch();
-
+  const loading = useSelector(isLoading);
   const { companyName, firstName, lastName, phone } = user || {};
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,7 +45,8 @@ const PersonalAccountUserProfile = ({ user }) => {
   };
 
   return (
-    <InfoWrapper>
+    <>
+    {loading ? <Loader/> : (<InfoWrapper>
       <div>
         <Grid container style={{ display: "flex", gap: "10px" }}>
           {Object.keys(formData).map((key) => (
@@ -82,7 +85,8 @@ const PersonalAccountUserProfile = ({ user }) => {
           Save changes
         </ButtonSave>
       </ButtonBox>
-    </InfoWrapper>
+    </InfoWrapper>)} 
+    </>
   );
 };
 

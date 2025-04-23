@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { Container } from "../Header/Header.styled";
 import {
   ContainerFavorites,
@@ -23,14 +23,16 @@ import {
 } from "../Catalog/Catalog.styled";
 import { Link, useNavigate } from "react-router";
 import Trolley from "../../assets/icons/trolley.svg";
-import { selectFavorites } from "../../redux/favorites/favorites-selectors";
+import { selectFavorites, selectFavoritesLoading } from "../../redux/favorites/favorites-selectors";
 import { ReactComponent as Favorite } from "../../assets/icons/Favorite.svg";
 import cartOperations from "../../redux/cart/cart-operations";
+import Loader from "../../shared/Loader/Loader";
 
 const Favorites = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
   const favorites = useSelector(selectFavorites);
+  const loading = useSelector(selectFavoritesLoading);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,16 +42,14 @@ const Favorites = () => {
   }, [navigate, user]);
 
   useEffect(() => {
-    const fetch = async () => {
-      await dispatch(favoritesOperations.fetchAllFavorites(user?.id));
-    };
-    fetch();
+    dispatch(favoritesOperations.fetchAllFavorites(user?.id));
   }, [dispatch, user]);
 
   useEffect(() => {
     const fetch = async () => {
       await dispatch(favoritesOperations.fetchAllFavorites(user?.id));
     };
+
     fetch();
   }, [dispatch, user]);
 
@@ -58,10 +58,9 @@ const Favorites = () => {
   };
 
   const handleAddToCart = async (id) => {
-    await dispatch(
-      cartOperations.addCartProduct({ productId: id, quantity: 1 })
-    );
-  };
+  
+    await dispatch(cartOperations.addCartProduct({productId: id, quantity: 1}));
+};
 
   return (
     <FavoritesSection>
@@ -69,7 +68,7 @@ const Favorites = () => {
         <ProductNavLinks page="favorites" />
         <FavoritesWrapper>
           <FavoritesTitle>Favorites</FavoritesTitle>
-          {user && (
+          {loading ? <Loader/> : (<>{user && (
             <FavoritesWrapper>
               <FavoritesList>
                 {favorites && favorites.length > 0 ? (
@@ -96,7 +95,10 @@ const Favorites = () => {
                         style={{ display: "flex" }}
                         state={{ id: item._id }}
                       >
-                        <FavoritesItemImg src={item.image} alt={item.name} />
+                        <FavoritesItemImg
+                          src={item.image}
+                          alt={item.name}
+                        />
                       </Link>
                       <CatalogProductsItemWrap>
                         <Link to={`/products/${item._id}`}>
@@ -116,7 +118,7 @@ const Favorites = () => {
                           <CatalogProductsBuyWrap
                             onClick={() => handleAddToCart(item._id)}
                           >
-                            <img src={Trolley} alt="Trolley" loading="lazy" />
+                            <img src={Trolley} alt="Trolley" />
                           </CatalogProductsBuyWrap>
                         </Link>
                       </CatalogProductsItemWrap>
@@ -127,7 +129,7 @@ const Favorites = () => {
                 )}
               </FavoritesList>
             </FavoritesWrapper>
-          )}
+          )}</>)}
         </FavoritesWrapper>
       </ContainerFavorites>
     </FavoritesSection>
