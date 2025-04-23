@@ -137,7 +137,7 @@ const AboutUs = () => {
               <AboutUsLinkImg
                 src={LogoAboutUs}
                 alt="Logo About Us"
-                loading="lazy"
+                // loading="lazy"
               />
 
               {isMobile ? (
