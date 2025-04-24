@@ -18,6 +18,8 @@ import { ReactComponent as FavoriteIcon } from "../../assets/icons/Favorite.svg"
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 import { ReactComponent as BagIcon } from "../../assets/icons/Bag.svg";
 import { Menu } from "@mui/material";
+import { getUser } from "../../redux/auth/auth-selectors";
+import { useSelector } from "react-redux";
 
 const headerAccessoriesList = [
   { name: "towels", link: "/products?category=towels" },
@@ -28,7 +30,7 @@ const headerAccessoriesList = [
 const Header = () => {
   const { pathname } = useLocation();
   console.log(pathname);
-  
+  const user = useSelector(getUser);
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -105,12 +107,17 @@ const Header = () => {
               {/* <HeaderNavLink>
                 <SearchIcon />
               </HeaderNavLink> */}
-              <HeaderNavLink $active={pathname === "/favorites"} to="/favorites">
+             {user.id ? (<> <HeaderNavLink $active={pathname === "/favorites"} to="/favorites">
                 <FavoriteIcon />
               </HeaderNavLink>
               <HeaderNavLink $active={pathname === "/basket"} to="/basket">
                 <BagIcon />
+              </HeaderNavLink></>) : (<> <HeaderNavLink  to="/favorites">
+                <FavoriteIcon />
               </HeaderNavLink>
+              <HeaderNavLink to="/account">
+                <BagIcon />
+              </HeaderNavLink></>)}
               <HeaderNavLink $active={pathname === "/account"} to="/account">
                 <UserIcon />
               </HeaderNavLink>

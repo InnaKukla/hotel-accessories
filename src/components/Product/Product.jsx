@@ -52,6 +52,18 @@ const Product = () => {
   const loading = useSelector(selectProductsLoading);
   const product = useSelector(selectOneProduct);
 
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     await dispatch(productsOperations.fetchOneProduct({ id }));
+  //     await dispatch(favoritesOperations.fetchOneFavorites(id));
+  //   };
+  //   fetch();
+  //   setIsFavoriteProduct(isFavorite);
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
   useEffect(() => {
     const fetch = async () => {
       await dispatch(productsOperations.fetchOneProduct({ id }));
@@ -59,28 +71,13 @@ const Product = () => {
     };
     fetch();
     setIsFavoriteProduct(isFavorite);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const fetch = async () => {
-      await dispatch(productsOperations.fetchOneProduct({ id }));
-      await dispatch(favoritesOperations.fetchOneFavorites(id));
-    };
-    fetch();
-    setIsFavoriteProduct(isFavorite);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // window.scrollTo({ top: 0, behavior: "smooth" });
   }, [dispatch, id, isFavorite]);
 
   const handleAddToCart = async () => {
     if (!isLoggedIn) {
-      console.log(!isLoggedIn, "isLoggedIn");
       navigate(`/account`);
     } else {
-      console.log(id);
-
       await dispatch(
         cartOperations.addCartProduct({ productId: id, quantity: 1 })
       );
@@ -90,7 +87,6 @@ const Product = () => {
 
   const handleFavorite = async () => {
     if (!isLoggedIn) {
-      console.log(!isLoggedIn, "isLoggedIn");
       navigate(`/account`);
     }
     if (isLoggedIn) {
@@ -106,7 +102,7 @@ const Product = () => {
         await dispatch(favoritesOperations.addFavorite(data));
         await dispatch(favoritesOperations.fetchOneFavorites(id));
       }
-      navigate(`/favorites`);
+      // navigate(`/favorites`);
     }
   };
   return (
@@ -117,13 +113,13 @@ const Product = () => {
         <ProductSection>
           <Container>
             <ProductNavLinks item={product} page="product" />
-            {loading ? (
+            {/* {loading ? (
               <Loader />
-            ) : (
+            ) : ( */}
               <ProductWrapper>
                 <ProductInformationWrapper>
                   <ProductInformImgWrap>
-                    <ProductInformImg src={product?.image} alt="product" loading="lazy"/>
+                    <ProductInformImg src={product?.image} alt="product" />
                   </ProductInformImgWrap>
 
                   <div>
@@ -195,7 +191,7 @@ const Product = () => {
                   </div>
                 </ProductInformationWrapper>
               </ProductWrapper>
-            )}
+            {/* )} */}
           </Container>
         </ProductSection>
       )}
