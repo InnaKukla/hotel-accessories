@@ -42,7 +42,10 @@ const Favorites = () => {
   }, [navigate, user]);
 
   useEffect(() => {
-    dispatch(favoritesOperations.fetchAllFavorites(user?.id));
+    const fetch = async () => {
+     await dispatch(favoritesOperations.fetchAllFavorites(user?.id));
+    }
+    fetch();
   }, [dispatch, user]);
 
   useEffect(() => {
@@ -68,11 +71,11 @@ const Favorites = () => {
         <ProductNavLinks page="favorites" />
         <FavoritesWrapper>
           <FavoritesTitle>Favorites</FavoritesTitle>
-          {loading ? <Loader/> : (<>{user && (
+          {loading ? <Loader/> : (<>{user.id && (
             <FavoritesWrapper>
               <FavoritesList>
                 {favorites && favorites.length > 0 ? (
-                  favorites.map((item) => (
+                  favorites?.map((item) => (
                     <CatalogProductsItem key={item._id}>
                       <div
                         style={{
