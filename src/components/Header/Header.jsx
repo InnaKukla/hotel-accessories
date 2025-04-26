@@ -29,7 +29,6 @@ const headerAccessoriesList = [
 
 const Header = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
   const user = useSelector(getUser);
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
