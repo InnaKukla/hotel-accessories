@@ -29,13 +29,11 @@ import {
   ContainerBasket,
 } from "./Basket.styled";
 import { Container } from "../Header/Header.styled";
-import { Link, useLocation, useNavigate} from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import productsOperations from "../../redux/products/products-operations";
 import cartOperations from "../../redux/cart/cart-operations";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectOneProduct,
-} from "../../redux/products/products-selectors";
+import { selectOneProduct } from "../../redux/products/products-selectors";
 import ProductNavLinks from "../../shared/ProductNavLinks/ProductNavLinks";
 import Trash from "../../assets/icons/trash.svg";
 import CodeIcon from "../../assets/icons/code-icon.svg";
@@ -45,7 +43,10 @@ import Loader from "../../shared/Loader/Loader";
 import formsOperations from "../../redux/forms/forms-operations";
 
 import { getUser } from "../../redux/auth/auth-selectors";
-import { selectCartLoading, selectCartsList } from "../../redux/cart/cart-selectors";
+import {
+  selectCartLoading,
+  selectCartsList,
+} from "../../redux/cart/cart-selectors";
 
 const Basket = () => {
   const user = useSelector(getUser);
@@ -59,15 +60,14 @@ const Basket = () => {
   const cartList = useSelector(selectCartsList);
   const [order, setOrder] = useState([]);
 
-  
   useEffect(() => {
     if (!user.id) {
-      navigate("/account")
+      navigate("/account");
     }
-   const fetch = async () => {
-   await dispatch(cartOperations.fetchCartProducts(user?.id));
-   };
-   fetch();
+    const fetch = async () => {
+      await dispatch(cartOperations.fetchCartProducts(user?.id));
+    };
+    fetch();
   }, [dispatch, navigate, user.id]);
 
   useEffect(() => {
@@ -154,7 +154,7 @@ const Basket = () => {
     }
     setIsEmailTouched(false);
     resetForm();
-   
+
     setIsEmailTouched(false);
     resetForm();
   };
@@ -183,18 +183,20 @@ const Basket = () => {
   useEffect(() => {
     if (id) {
       const fetchProducts = async () => {
-       await dispatch(productsOperations.fetchOneProduct({ id }));
-      }
+        await dispatch(productsOperations.fetchOneProduct({ id }));
+      };
       fetchProducts();
     }
-    
   }, [dispatch, id]);
   return (
     <>
-        <BasketSection>
-          <ContainerBasket>
-            <ProductNavLinks item={product} page="basket" />
-            {loading ? <Loader/> : (<BasketWrap>
+      <BasketSection>
+        <ContainerBasket>
+          <ProductNavLinks item={product} page="basket" />
+          {loading ? (
+            <Loader />
+          ) : (
+            <BasketWrap>
               <BasketProductsList>
                 {cartList.length === 0 ? (
                   <p>Basket is empty.</p>
@@ -202,7 +204,7 @@ const Basket = () => {
                   <>
                     {cartList?.map((item) => (
                       <BasketProductsItem key={item.product?._id}>
-                        <div style={{display: "flex"}}>
+                        <div style={{ display: "flex" }}>
                           <BasketProductItemImg
                             src={item?.product?.image}
                             alt={item.product?.name}
@@ -235,25 +237,26 @@ const Basket = () => {
                                 <p>dozen</p>
                                 <BasketProductDozenQuantityWrap>
                                   <button
-                                    onClick={
-                                      () =>
-                                        handleUpdateQuantity(
-                                          "minus",
-                                          item.product?._id,
-                                          item.quantity
-                                        )}
+                                    onClick={() =>
+                                      handleUpdateQuantity(
+                                        "minus",
+                                        item.product?._id,
+                                        item.quantity
+                                      )
+                                    }
                                   >
                                     -
                                   </button>
                                   {item.quantity}
                                   <button
-                                    onClick={
-                                      () =>
-                                        handleUpdateQuantity(
-                                          "plus",
-                                          item.product?._id,
-                                          item.quantity
-                                        )}>
+                                    onClick={() =>
+                                      handleUpdateQuantity(
+                                        "plus",
+                                        item.product?._id,
+                                        item.quantity
+                                      )
+                                    }
+                                  >
                                     +
                                   </button>
                                 </BasketProductDozenQuantityWrap>
@@ -262,23 +265,44 @@ const Basket = () => {
                               <BasketProductChooseForBuySize>
                                 <span>size</span>
                                 <div>
-                                  <img src={SizeIcon} alt="Size Icon" width={12} loading="lazy"/>
+                                  <img
+                                    src={SizeIcon}
+                                    alt="Size Icon"
+                                    width={12}
+                                    loading="lazy"
+                                  />
                                   <p>{item.product?.size}</p>
                                 </div>
                               </BasketProductChooseForBuySize>
 
                               <BasketProductChooseForBuyColor>
                                 <span>color</span>
-                                <p>{item.product?.color?.join(", ")}</p>
+                                {/* <p>{item.product?.color?.join(", ")}</p> */}
+                                <div style={{ display: "flex", gap: "5px" }}>
+                                  {item.product?.color?.map((color) => (
+                                    <div
+                                      key={color}
+                                      style={{
+                                        width: "15px",
+                                        height: "15px",
+                                        backgroundColor: `${color}`,
+                                        marginBottom: "5px",
+                                        border: "1px solid",
+                                      }}
+                                    ></div>
+                                  ))}
+                                </div>
                               </BasketProductChooseForBuyColor>
                             </BasketProductChooseForBuyWrap>
                           </BasketProductItemDescription>
 
                           <BasketProductTotalPriceItem>
                             <BasketProductDeleteButton
-                              onClick={() => handleRemoveFromCart(item?.product?._id)}
+                              onClick={() =>
+                                handleRemoveFromCart(item?.product?._id)
+                              }
                             >
-                              <img src={Trash} alt="Trash" loading="lazy"/>
+                              <img src={Trash} alt="Trash" loading="lazy" />
                             </BasketProductDeleteButton>
                             <h2>
                               total price:{" "}
@@ -295,130 +319,135 @@ const Basket = () => {
                   </>
                 )}
               </BasketProductsList>
-            </BasketWrap>)}
+            </BasketWrap>
+          )}
 
-            <BasketOrderWrapper>
-              <BasketFormWrapper className="prefooter-form-wrapper">
-                <BasketFormBox
-                  component="form"
-                  id="form-basket"
-                  noValidate
-                  autoComplete="off"
-                  onSubmit={handleSubmit}
-                >
-                  <FormStyled>
-                    <BasketFormItem>
-                      <BasketFormItemText>Company Name</BasketFormItemText>
-                      <BasketTextField
-                        sx={{ minWidth: "650px" }}
-                        autoComplete="Company Name"
-                        id="Company Name"
-                        //   label="Company Name"
-                        name="companyName"
-                        variant="outlined"
-                        value={formData.companyName}
-                        onChange={handleChange}
-                      />
-                    </BasketFormItem>
+          <BasketOrderWrapper>
+            <BasketFormWrapper className="prefooter-form-wrapper">
+              <BasketFormBox
+                component="form"
+                id="form-basket"
+                noValidate
+                autoComplete="off"
+                onSubmit={handleSubmit}
+              >
+                <FormStyled>
+                  <BasketFormItem>
+                    <BasketFormItemText>Company Name</BasketFormItemText>
+                    <BasketTextField
+                      sx={{ minWidth: "650px" }}
+                      autoComplete="Company Name"
+                      id="Company Name"
+                      //   label="Company Name"
+                      name="companyName"
+                      variant="outlined"
+                      value={formData.companyName}
+                      onChange={handleChange}
+                    />
+                  </BasketFormItem>
 
-                    <BasketFormItem>
-                      <BasketFormItemText>Purchasing Contact Name</BasketFormItemText>
-                      <BasketTextField
-                        sx={{ minWidth: "650px" }}
-                        autoComplete="Purchasing Contact Name"
-                        id="Purchasing Contact Name"
-                        //   label="Purchasing Contact Name"
-                        name="name"
-                        variant="outlined"
-                        value={formData.name}
-                        onChange={handleChange}
-                      />
-                    </BasketFormItem>
+                  <BasketFormItem>
+                    <BasketFormItemText>
+                      Purchasing Contact Name
+                    </BasketFormItemText>
+                    <BasketTextField
+                      sx={{ minWidth: "650px" }}
+                      autoComplete="Purchasing Contact Name"
+                      id="Purchasing Contact Name"
+                      //   label="Purchasing Contact Name"
+                      name="name"
+                      variant="outlined"
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
+                  </BasketFormItem>
 
-                    <BasketFormItem>
-                      <BasketFormItemText>Purchasing Contact Email</BasketFormItemText>
-                      <BasketTextField
-                        sx={{ minWidth: "650px" }}
-                        autoComplete="Purchasing Contact Email"
-                        id="Purchasing Contact Email"
-                        name="email"
-                        type="email"
-                        variant="outlined"
-                        value={formData.email}
-                        onChange={handleChange}
-                      />
-                    </BasketFormItem>
+                  <BasketFormItem>
+                    <BasketFormItemText>
+                      Purchasing Contact Email
+                    </BasketFormItemText>
+                    <BasketTextField
+                      sx={{ minWidth: "650px" }}
+                      autoComplete="Purchasing Contact Email"
+                      id="Purchasing Contact Email"
+                      name="email"
+                      type="email"
+                      variant="outlined"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                  </BasketFormItem>
 
-                    <BasketFormItem>
-                      <BasketFormItemText>Phone</BasketFormItemText>
-                      <BasketTextField
-                        sx={{ minWidth: "650px" }}
-                        autoComplete="Phone"
-                        id="phone"
-                        name="phone"
-                        type="phone"
-                        variant="outlined"
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
-                    </BasketFormItem>
+                  <BasketFormItem>
+                    <BasketFormItemText>Phone</BasketFormItemText>
+                    <BasketTextField
+                      sx={{ minWidth: "650px" }}
+                      autoComplete="Phone"
+                      id="phone"
+                      name="phone"
+                      type="phone"
+                      variant="outlined"
+                      value={formData.phone}
+                      onChange={handleChange}
+                    />
+                  </BasketFormItem>
 
-                    <BasketFormItem>
-                      <BasketFormItemText>Address</BasketFormItemText>
-                      <BasketTextField
-                        sx={{ minWidth: "650px" }}
-                        autoComplete="Address"
-                        id="Address"
-                        name="address"
-                        type="address"
-                        variant="outlined"
-                        value={formData.address}
-                        onChange={handleChange}
-                      />
-                    </BasketFormItem>
+                  <BasketFormItem>
+                    <BasketFormItemText>Address</BasketFormItemText>
+                    <BasketTextField
+                      sx={{ minWidth: "650px" }}
+                      autoComplete="Address"
+                      id="Address"
+                      name="address"
+                      type="address"
+                      variant="outlined"
+                      value={formData.address}
+                      onChange={handleChange}
+                    />
+                  </BasketFormItem>
 
-                    <BasketFormItem>
-                      <BasketFormItemText>Сomment</BasketFormItemText>
-                      <BasketTextField
-                        sx={{ minWidth: "650px" }}
-                        autoComplete="Сomment"
-                        id="Сomment"
-                        name="comment"
-                        variant="outlined"
-                        value={formData.comment}
-                        onChange={handleChange}
-                      />
-                    </BasketFormItem>
-                  </FormStyled>
-                  <BasketFormButton type="submit">Send Order</BasketFormButton>
-                </BasketFormBox>
-              </BasketFormWrapper>
+                  <BasketFormItem>
+                    <BasketFormItemText>Сomment</BasketFormItemText>
+                    <BasketTextField
+                      sx={{ minWidth: "650px" }}
+                      autoComplete="Сomment"
+                      id="Сomment"
+                      name="comment"
+                      variant="outlined"
+                      value={formData.comment}
+                      onChange={handleChange}
+                    />
+                  </BasketFormItem>
+                </FormStyled>
+                <BasketFormButton type="submit">Send Order</BasketFormButton>
+              </BasketFormBox>
+            </BasketFormWrapper>
 
-              <BasketProductTotalPriceWrap>
-                <div
-                  style={{
-                    backgroundColor: "rgba(35, 81, 96, 1)",
-                    margin: "auto",
-                  }}
-                >
-                  <h2>
-                    total price:{" "}
-                    {cartList
-                      .reduce(
-                        (total, item) =>
-                          total +
-                          Number(item.product?.price?.replace(",", ".")) *
-                            item.quantity,
-                        0
-                      )
-                      .toFixed(2)}{" "}
-                    $
-                  </h2>
-                </div>
-              </BasketProductTotalPriceWrap>
-            </BasketOrderWrapper>
-          </ContainerBasket>
-        </BasketSection>
+            <BasketProductTotalPriceWrap>
+              <div
+                style={{
+                  backgroundColor: "rgba(35, 81, 96, 1)",
+                  margin: "auto",
+                }}
+              >
+                <h2>
+                  total price:{" "}
+                  {cartList
+                    .reduce(
+                      (total, item) =>
+                        total +
+                        Number(item.product?.price?.replace(",", ".")) *
+                          item.quantity,
+                      0
+                    )
+                    .toFixed(2)}{" "}
+                  $
+                </h2>
+              </div>
+            </BasketProductTotalPriceWrap>
+          </BasketOrderWrapper>
+        </ContainerBasket>
+      </BasketSection>
     </>
   );
 };

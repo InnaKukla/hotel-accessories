@@ -29,6 +29,7 @@ import {
   CatalogProductsPagination,
   ContainerCatalog,
   CatalogProductsItemImg,
+  CatalogPaginationWrap,
 } from "./Catalog.styled";
 
 import Trolley from "../../assets/icons/trolley.svg";
@@ -185,20 +186,14 @@ const Catalog = () => {
               {/* </CatalogAll> */}
             </CatalogWrapper>
             {products && products.length > 0 && (
-              <div
-                style={{
-                  display: "flex",
-                  marginTop: "60px",
-                  marginBottom: "200px",
-                }}
-              >
+              <CatalogPaginationWrap>
                 <CatalogProductsPagination
                   sx={{ margin: "auto" }}
                   count={totalPages || 0}
                   page={page}
                   onChange={handleChangePage}
                 />
-              </div>
+              </CatalogPaginationWrap>
             )}
           </ContainerCatalog>
         </CatalogSection>

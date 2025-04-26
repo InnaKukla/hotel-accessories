@@ -41,13 +41,12 @@ export const BeliefsMainText = styled.h2`
   }
   @media screen and (max-width: 480px) {
   }
-
 `;
 
 export const BeliefsList = styled.ul`
-display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
@@ -55,18 +54,17 @@ display: grid;
   }
   @media screen and (max-width: 768px) {
     display: flex;
-  flex-direction: column;
-  gap: 40px;
+    flex-direction: column;
+    gap: 40px;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
 export const BeliefsItem = styled.li`
   display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 1);
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 1);
   @media screen and (max-width: 1024px) {
     background-color: rgba(255, 255, 255, 1);
     display: flex;
@@ -74,24 +72,21 @@ export const BeliefsItem = styled.li`
   }
   @media screen and (max-width: 768px) {
     background-color: rgba(255, 255, 255, 1);
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
 export const BeliefsImg = styled.img`
-      max-width: 460px;
+  max-width: 460px;
   @media screen and (max-width: 1024px) {
-   
   }
   @media screen and (max-width: 768px) {
-  max-width: 100%;
+    max-width: 100%;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
@@ -102,7 +97,6 @@ export const BeliefsItemTitle = styled.p`
   line-height: 150%;
   color: rgba(35, 81, 96, 1);
   margin-top: 35px;
-
 `;
 
 export const BeliefsItemText = styled.p`
@@ -112,5 +106,4 @@ export const BeliefsItemText = styled.p`
   line-height: 150%;
   margin-top: 10px;
   color: rgba(35, 81, 96, 1);
-
 `;
