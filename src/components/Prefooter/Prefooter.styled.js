@@ -3,13 +3,15 @@ import styled from "styled-components";
 
 export const PrefooterSection = styled.section`
   padding-top: 150px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   background-color: rgba(249, 249, 249, 1);
   min-width: 100vw;
   @media screen and (max-width: 1024px) {
+
   }
   @media screen and (max-width: 768px) {
     padding-top: 100px;
+    padding-bottom: 50px;
   }
   @media screen and (max-width: 480px) {
     
