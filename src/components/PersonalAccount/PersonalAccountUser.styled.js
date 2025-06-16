@@ -203,15 +203,28 @@ export const UserInfoTextGrid = styled(Grid)`
   }
 `;
 
-export const UserInfoTextField = styled(TextField)`
+export const UserInfoTextFieldWrap = styled(Grid)`
   @media screen and (max-width: 1024px) {
-    /* max-width: 400px; */
+   
   }
   @media screen and (max-width: 768px) {
-    width: 100%;
+   
   }
   @media screen and (max-width: 480px) {
+   width: 100%
+  }
+`;
+
+export const UserInfoTextField = styled(TextField)`
+  @media screen and (max-width: 1024px) {
+    max-width: 400px;
     width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+   
+  }
+  @media screen and (max-width: 480px) {
+   
   }
 `;
 

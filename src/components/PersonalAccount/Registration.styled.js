@@ -13,6 +13,8 @@ export const Form = styled.form`
   gap: 60px;
   max-width: 700px;
   margin: auto;
+  align-items: center;
+ 
   @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
@@ -114,6 +116,7 @@ export const RegistrationFieldWrapper = styled.div`
   flex-direction: column;
   gap: 10px;
   max-width: 700px;
+  width: 100%;
   span {
     color: rgba(227, 58, 36, 1);
   }

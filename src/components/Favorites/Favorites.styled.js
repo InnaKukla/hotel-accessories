@@ -439,7 +439,7 @@ width: 100%;
   }
   @media screen and (max-width: 600px) {
         height: 250px;
-        width: 300px;
+        width: 250px;
 }
   @media screen and (max-width: 480px) {
     height: 300px;

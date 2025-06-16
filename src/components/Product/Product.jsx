@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "../Header/Header.styled";
-import { Link, useParams, useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import productsOperations from "../../redux/products/products-operations";
 import { useDispatch, useSelector } from "react-redux";
 import {

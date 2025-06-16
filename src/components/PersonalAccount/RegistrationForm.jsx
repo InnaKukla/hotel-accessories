@@ -66,7 +66,7 @@ const RegistrationForm = () => {
     initialValues,
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
-      console.log("Submitted values:", values);
+      // console.log("Submitted values:", values);
       await dispatch(register(values));
       setFormSubmitted(true);
       resetForm({values: initialValues});

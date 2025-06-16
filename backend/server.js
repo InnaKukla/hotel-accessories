@@ -7,14 +7,33 @@ const favoritesRoutes = require("./routes/favorites");
 const cartRoutes = require("./routes/cart");
 const formRoutes = require("./routes/form");
 const productsRoutes = require("./routes/products");
+const Product = require("./models/Product");
 
 dotenv.config();
+
+
+const warmUpDatabase = async () => {
+  try {
+    console.log("Warm up database...");
+    await Product.find().limit(8);
+    await Product.find({category: "bedding"}).limit(8);
+    await Product.find({category: "towels"}).limit(8);
+     await Product.find({category: "household-linens"}).limit(8);
+    console.log("Warm up finished");
+    
+    
+  } catch (error) {
+    console.error("Warm up error", error);
+    
+  }
+}
 
 // Підключення до MongoDB
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB Connected...");
+     await warmUpDatabase();
   } catch (error) {
     console.error("MongoDB connection error:", error);
     process.exit(1);

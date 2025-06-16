@@ -171,7 +171,7 @@ const Catalog = () => {
                           <CatalogProductsBuyWrap
                             onClick={() => handleAddToCart(item._id)}
                           >
-                            <img src={Trolley} alt="Trolley" loading="lazy"/>
+                            <img src={Trolley} alt="Trolley" loading="lazy" />
                           </CatalogProductsBuyWrap>
                         </Link>
                       </CatalogProductsItemWrap>

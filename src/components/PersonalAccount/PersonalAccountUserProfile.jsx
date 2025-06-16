@@ -3,6 +3,8 @@ import {
   ButtonBox,
   ButtonSave,
   InfoWrapper,
+  UserInfoTextField,
+  UserInfoTextFieldWrap,
 } from "./PersonalAccountUser.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Grid } from "@mui/system";
@@ -50,10 +52,10 @@ const PersonalAccountUserProfile = ({ user }) => {
       <div>
         <Grid container style={{ display: "flex", gap: "10px" }}>
           {Object.keys(formData).map((key) => (
-            <Grid item key={key}>
+            <UserInfoTextFieldWrap item key={key}>
               <Box marginTop={1}>
-                <TextField
-                  style={{ width: "100%", maxWidth: 400 }}
+                <UserInfoTextField
+                  // sx={{ width: "100%", maxWidth: 400 }}
                   multiline
                   maxRows={4}
                   id={key}
@@ -62,12 +64,12 @@ const PersonalAccountUserProfile = ({ user }) => {
                   onChange={handleChange}
                 />
               </Box>
-            </Grid>
+            </UserInfoTextFieldWrap>
           ))}
-          <Grid item key={user.id}>
+          <UserInfoTextFieldWrap item key={user.id}>
             <Box marginTop={1}>
-              <TextField
-                style={{ width: "100%", maxWidth: 400 }}
+              <UserInfoTextField
+                // sx={{ width: "100%", maxWidth: 400 }}
                 multiline
                 maxRows={4}
                 key={user.id}
@@ -77,7 +79,7 @@ const PersonalAccountUserProfile = ({ user }) => {
                 disabled
               />
             </Box>
-          </Grid>
+          </UserInfoTextFieldWrap>
         </Grid>
       </div>
       <ButtonBox isdesbutton={isDisabled.toString()}>
