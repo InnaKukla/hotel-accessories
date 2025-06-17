@@ -82,9 +82,9 @@ export const BeliefsItem = styled.li`
 export const BeliefsImg = styled.img`
   max-width: 460px;
   @media screen and (max-width: 1024px) {
+    max-width: 100%;
   }
   @media screen and (max-width: 768px) {
-    max-width: 100%;
   }
   @media screen and (max-width: 480px) {
   }

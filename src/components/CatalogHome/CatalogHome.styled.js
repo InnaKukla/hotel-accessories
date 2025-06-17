@@ -1,23 +1,21 @@
 import styled from "styled-components";
 
 export const CatalogHomeSection = styled.section`
-padding-top: 150px;
-background-color: rgba(249, 249, 249, 1);
-min-width: 100vw;
+  padding-top: 150px;
+  background-color: rgba(249, 249, 249, 1);
+  min-width: 100vw;
   @media screen and (max-width: 1024px) {
-   
   }
   @media screen and (max-width: 768px) {
-    
   }
   @media screen and (max-width: 480px) {
-    padding-top: 50px;
+    padding-top: 100px;
   }
 `;
 
 export const ContainerCatalogHome = styled.div`
-max-width: 1280px;
-  
+  max-width: 1280px;
+
   padding: 0 20px;
   margin: 0 auto;
   @media screen and (max-width: 1024px) {
@@ -32,7 +30,7 @@ max-width: 1280px;
 `;
 
 export const CatalogHomeWrapper = styled.div`
-/* width: 740px; */
+  /* width: 740px; */
   @media screen and (min-width: 768px) {
     /* width: 740px; */
   }
@@ -43,14 +41,13 @@ export const CatalogHomeWrapper = styled.div`
 `;
 
 export const CatalogHomeHeader = styled.div`
-display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   @media screen and (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-   
   }
   @media screen and (max-width: 768px) {
     display: flex;
@@ -58,46 +55,43 @@ display: flex;
     align-items: flex-end;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
 export const CatalogHomeMainText = styled.h2`
-font-family: Rebelton;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: 0%;
+  font-family: Rebelton;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
 
-    margin-top: 0px;
-    margin-bottom: 0px;
-    /* font-family: Angst;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* font-family: Angst;
     font-size: 96px;
     line-height: 105.6px;
     font-weight: 400; */
-    color: rgba(35, 81, 96, 1);
-
+  color: rgba(35, 81, 96, 1);
 `;
 
-
 export const CatalogHomeLine = styled.div`
-height: 1px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-bottom: 0px;
-    opacity: 0.2;
-    color: rgba(0, 0, 0, 1);
-    background-color: rgba(0, 0, 0, 1);
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  opacity: 0.2;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
 `;
 
 export const CatalogHomeList = styled.div`
-display: grid;
-    align-items: center;
-    grid-auto-columns: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+  display: grid;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
   @media screen and (max-width: 1024px) {
     display: grid;
     align-items: center;
@@ -117,24 +111,23 @@ display: grid;
     grid-template-rows: auto;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
 export const CatalogHomeListTextWrap = styled.div`
- display: flex;
-    height: 375px;
+  display: flex;
+  height: 375px;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    /* font-family: Rebelton;
+  /* font-family: Rebelton;
     font-size: 48px;
     line-height: 67.2px;
     font-weight: 400; */
-    color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 1);
 
-    border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   @media screen and (max-width: 1024px) {
     display: flex;
     height: 300px;
@@ -165,15 +158,15 @@ export const CatalogHomeListTextWrap = styled.div`
 `;
 
 export const CatalogHomeListText = styled.p`
- /* margin-right: 112px;
+  /* margin-right: 112px;
     margin-left: 112px; */
-    opacity: 1;
-    text-transform: uppercase;
-    font-family: Rebelton;
-    font-size: 48px;
-    line-height: 67.2px;
-    font-weight: 400;
-    color: rgba(35, 81, 96, 1);
+  opacity: 1;
+  text-transform: uppercase;
+  font-family: Rebelton;
+  font-size: 48px;
+  line-height: 67.2px;
+  font-weight: 400;
+  color: rgba(35, 81, 96, 1);
   @media screen and (max-width: 1024px) {
     /* margin-right: 80px;
     margin-left: 80px; */
@@ -185,20 +178,18 @@ export const CatalogHomeListText = styled.p`
     line-height: 40px;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
-
 export const CatalogHomeListItem = styled.div`
-display: flex;
-    height: 375px;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./img/towel.jpg");
-    background-position: 50% 50%;
-    background-size: cover;
-    font-family: Rebelton;
-    text-align: center;
+  display: flex;
+  height: 375px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/towel.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  font-family: Rebelton;
+  text-align: center;
   @media screen and (max-width: 1024px) {
     height: 300px;
   }
@@ -211,42 +202,40 @@ display: flex;
 `;
 
 export const CatalogHomeListTextItem = styled.p`
-display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Rebelton Extended;
-    font-size: 48px;
-    line-height: 67.2px;
-    text-align: center;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 1);
-    word-break: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Rebelton Extended;
+  font-size: 48px;
+  line-height: 67.2px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  word-break: break-word;
   @media screen and (max-width: 1024px) {
-
   }
   @media screen and (max-width: 768px) {
     font-size: 22px;
     line-height: 40px;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
 export const CatalogHomeHouseholdLinens = styled.div`
-display: flex;
-    height: 375px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./img/household.jpg");
-    background-position: 50% 50%;
-    background-size: cover;
-    font-family: Rebelton;
-    text-align: center;
+  display: flex;
+  height: 375px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/household.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  font-family: Rebelton;
+  text-align: center;
   @media screen and (max-width: 1024px) {
     height: 300px;
   }
@@ -255,18 +244,17 @@ display: flex;
     min-width: 150px;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
 export const CatalogHomeItemBed = styled.div`
-display: flex;
-    height: 375px;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./img/badding.jpg");
-    background-position: 50% 50%;
-    background-size: cover;
+  display: flex;
+  height: 375px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/badding.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
   @media screen and (max-width: 1024px) {
     height: 300px;
   }
@@ -275,7 +263,6 @@ display: flex;
     min-width: 150px;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 

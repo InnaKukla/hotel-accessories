@@ -378,6 +378,7 @@ export const AboutUsSectionImgMiddle = styled.img`
     max-width: 66.85%;
   }
   @media screen and (max-width: 480px) {
+    max-width: 66.85%;
   }
 `;
 

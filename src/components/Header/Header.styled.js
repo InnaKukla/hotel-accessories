@@ -10,11 +10,10 @@ export const HeaderWrap = styled.header`
   top: 0;
   z-index: 1500;
   min-width: 100vw;
-  
 `;
 
 export const Container = styled.div`
-max-width: 1280px;
+  max-width: 1280px;
 
   padding: 0 20px;
   margin: 0 auto;
@@ -36,7 +35,6 @@ export const HeaderWrapper = styled.div`
   font-family: Rebelton;
   justify-items: center;
   @media (max-width: 1280px) {
-
   }
 
   @media (max-width: 1024px) {
@@ -44,21 +42,18 @@ export const HeaderWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-   
   }
 
   @media (max-width: 480px) {
     display: flex;
   }
-
 `;
 
 export const HeaderAccessoriesList = styled.ul`
-display: flex;
+  display: flex;
   /* justify-content: flex-start; */
   align-items: center;
   gap: 55px;
-  
 `;
 
 export const HeaderCatalogButton = styled(Button)`
@@ -78,7 +73,6 @@ export const HeaderAccessoriesItem = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 10px;
-  
 `;
 
 export const HeaderAccessoriesItemText = styled(MenuItem)`
@@ -102,13 +96,13 @@ export const HeaderAccessoriesItemText = styled(MenuItem)`
 `;
 
 export const HeaderAboutUs = styled.p`
-opacity: 0.5;
-    font-family: Rebelton;
-    font-size: 16px;
-    line-height: 22.4px;
-    color: rgba(35, 81, 96, 1);
- @media screen and (max-width: 1024px) {
   opacity: 0.5;
+  font-family: Rebelton;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: rgba(35, 81, 96, 1);
+  @media screen and (max-width: 1024px) {
+    opacity: 0.5;
     font-family: Rebelton;
     font-size: 16px;
     line-height: 22.4px;
@@ -116,10 +110,10 @@ opacity: 0.5;
   }
   @media screen and (max-width: 768px) {
     opacity: 0.5;
-  font-family: Rebelton;
-  font-size: 16px;
-  line-height: 22.4px;
-  color: rgba(35, 81, 96, 1);
+    font-family: Rebelton;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: rgba(35, 81, 96, 1);
   }
   @media screen and (max-width: 480px) {
   }
@@ -141,9 +135,9 @@ export const HeaderNavWrap = styled.div`
   @media screen and (max-width: 480px) {
     flex-direction: column;
     gap: 10px;
-    align-items: flex-end
+    align-items: flex-end;
   }
-/* 
+  /* 
 
 
   @media screen and (min-width: 768px) {
@@ -157,12 +151,10 @@ export const HeaderNavWrap = styled.div`
 `;
 
 export const HeaderNav = styled.div`
-
   display: flex;
   gap: 20px;
 
   @media (max-width: 1280px) {
-   
   }
 
   @media (max-width: 1024px) {
@@ -174,19 +166,16 @@ export const HeaderNav = styled.div`
   }
 
   @media (max-width: 480px) {
-
   }
-
 `;
 
 export const HeaderNavLink = styled(Link)`
-svg {
-  fill: ${({$active}) => ($active ? 'rgb(35 81 96 / 80%)' : 'none')};
-}
+  svg {
+    fill: ${({ $active }) => ($active ? "rgb(35 81 96 / 80%)" : "none")};
+  }
 
   :hover {
     fill: rgb(35 81 96 / 80%);
-
   }
 `;
 

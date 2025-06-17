@@ -14,7 +14,7 @@ export const Form = styled.form`
   max-width: 700px;
   margin: auto;
   align-items: center;
- 
+
   @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
@@ -121,7 +121,6 @@ export const RegistrationFieldWrapper = styled.div`
     color: rgba(227, 58, 36, 1);
   }
   @media screen and (max-width: 1024px) {
-    
   }
   @media screen and (max-width: 768px) {
     max-width: 400px;
@@ -137,9 +136,9 @@ export const Label = styled(TextField)`
       border: 1px solid rgb(178, 171, 171) !important; // Змінює колір бордюру при фокусі
     }
   }
-.MuiInputLabel-root.Mui-focused{
-  color:rgba(35, 81, 96, 1);
-}
+  .MuiInputLabel-root.Mui-focused {
+    color: rgba(35, 81, 96, 1);
+  }
   .MuiOutlinedInput-root {
     font-family: Rebelton;
     font-style: normal;
@@ -181,69 +180,68 @@ export const Label = styled(TextField)`
     }
   }
   @media screen and (max-width: 1024px) {
-  
   }
   @media screen and (max-width: 768px) {
   }
   @media screen and (max-width: 480px) {
     .MuiOutlinedInput-root {
-    font-family: Rebelton;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.2px;
-    height: 60px;
-    color: rgba(35, 81, 96, 1);
-  }
-
-  .MuiInputLabel-root {
-    font-family: Rebelton;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.2px;
-    height: 40%;
-    color: rgba(35, 81, 96, 1);
-    opacity: 0.2;
-  }
-  && {
-    font-family: Rebelton;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.2px;
-    height: 40px;
-    color: rgba(35, 81, 96, 1);
-    /* margin-top: 20px; */
-
-    .MuiFormHelperText-root.Mui-error {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 12px;
       font-family: Rebelton;
       font-style: normal;
       font-weight: 400;
+      font-size: 14px;
       letter-spacing: 0.2px;
+      height: 60px;
+      color: rgba(35, 81, 96, 1);
+    }
+
+    .MuiInputLabel-root {
+      font-family: Rebelton;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      height: 40%;
+      color: rgba(35, 81, 96, 1);
+      opacity: 0.2;
+    }
+    && {
+      font-family: Rebelton;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      height: 40px;
+      color: rgba(35, 81, 96, 1);
+      /* margin-top: 20px; */
+
+      .MuiFormHelperText-root.Mui-error {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-family: Rebelton;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+      }
     }
   }
-}
 `;
 
 export const RegistrationButton = styled(Button)`
   && {
-      font-family: Rebelton;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 100%;
-      letter-spacing: 0%;
-      text-align: center;
-      color: rgba(255, 255, 255, 1);
-      width: 100%;
-      background-color: rgba(35, 81, 96, 1);
-      margin-bottom: 40px;
-      border-radius: 0%;
-      padding: 14px 0;
-    }
+    font-family: Rebelton;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    background-color: rgba(35, 81, 96, 1);
+    margin-bottom: 40px;
+    border-radius: 0%;
+    padding: 14px 0;
+  }
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 768px) {

@@ -8,13 +8,11 @@ export const PersonalAccountWrap = styled.div`
     padding-bottom: 70px;
   }
   @media screen and (max-width: 768px) {
-
   }
   @media screen and (max-width: 480px) {
     padding-bottom: 0;
   }
 `;
-
 
 export const PersonalAccountUserWrap = styled.div`
   display: flex;
@@ -145,10 +143,6 @@ export const PersonalAccountLogoutButton = styled.button`
   margin-top: 40px;
   gap: 5px;
   text-decoration: none;
-  p{
-    text-decoration: none;
-    color: black;
-  }
   @media screen and (max-width: 1024px) {
     margin-top: 0;
     display: flex;
@@ -205,13 +199,11 @@ export const UserInfoTextGrid = styled(Grid)`
 
 export const UserInfoTextFieldWrap = styled(Grid)`
   @media screen and (max-width: 1024px) {
-   
   }
   @media screen and (max-width: 768px) {
-   
   }
   @media screen and (max-width: 480px) {
-   width: 100%
+    width: 100%;
   }
 `;
 
@@ -221,13 +213,10 @@ export const UserInfoTextField = styled(TextField)`
     width: 100%;
   }
   @media screen and (max-width: 768px) {
-   
   }
   @media screen and (max-width: 480px) {
-   
   }
 `;
-
 export const ButtonBox = styled(Box)`
   background-color: ${(props) =>
     props.isdesbutton === "true"

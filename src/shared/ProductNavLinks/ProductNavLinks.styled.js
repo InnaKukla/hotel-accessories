@@ -97,8 +97,7 @@ export const ProductNavLinkItemName = styled.div`
     color: rgba(35, 81, 96, 1);
     word-break: break-word;
     overflow-wrap: break-word;
-     width: 100%;;
-
+    width: 100%;
   }
   @media screen and (max-width: 1024px) {
     display: flex;

@@ -1,8 +1,4 @@
-import { Pagination } from "@mui/material";
-import { Link } from "react-router";
-import styled from "styled-components";
-
-export const CatalogSection = styled.section`
+"use strict";(self.webpackChunkhotel_accessories=self.webpackChunkhotel_accessories||[]).push([[367],{1052:(e,i,t)=>{t.d(i,{A:()=>n});var a=t(5043);function n(e){let{controlled:i,default:t,name:n,state:o="value"}=e;const{current:d}=a.useRef(void 0!==i),[r,x]=a.useState(t);return[d?i:r,a.useCallback((e=>{d||x(e)}),[])]}},7277:(e,i,t)=>{t.d(i,{$q:()=>r,HZ:()=>v,Ml:()=>z,O:()=>A,Rt:()=>d,S1:()=>m,SR:()=>f,TF:()=>p,U1:()=>g,ab:()=>l,cp:()=>k,dr:()=>h,eZ:()=>s,es:()=>y,hj:()=>b,lT:()=>w,re:()=>x,sJ:()=>S,tO:()=>u,yp:()=>c});var a=t(9135),n=t(5180),o=t(5464);const d=o.Ay.section`
   display: flex;
   padding-top: 48px;
   background-color: rgba(249, 249, 249, 1);
@@ -15,9 +11,7 @@ export const CatalogSection = styled.section`
   @media screen and (max-width: 480px) {
     padding-top: 30px;
   }
-`;
-
-export const ContainerCatalog = styled.div`
+`,r=o.Ay.div`
   max-width: 1280px;
   width: 100%;
   padding: 0 20px;
@@ -31,18 +25,14 @@ export const ContainerCatalog = styled.div`
   @media screen and (max-width: 480px) {
     max-width: 100%;
   }
-`;
-
-export const CatalogWrapper = styled.div`
+`,x=o.Ay.div`
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1280px) {
     /* margin-bottom: 60px; */
   }
-`;
-
-export const CatalogHeader = styled.div`
+`,p=o.Ay.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,9 +53,7 @@ export const CatalogHeader = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogMainText = styled.h2`
+`,m=o.Ay.h2`
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: Angst;
@@ -93,9 +81,7 @@ export const CatalogMainText = styled.h2`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterWrapper = styled.div`
+`,l=(o.Ay.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -107,9 +93,7 @@ export const CatalogFilterWrapper = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterText = styled.p`
+`,o.Ay.p`
   font-family: Helvetica;
   font-size: 20px;
   line-height: 30px;
@@ -121,9 +105,7 @@ export const CatalogFilterText = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogLine = styled.div`
+`,o.Ay.div`
   height: 1px;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -137,9 +119,7 @@ export const CatalogLine = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogList = styled.div`
+`),c=(o.Ay.div`
   display: flex;
   align-items: center;
   grid-auto-columns: 1fr;
@@ -153,9 +133,7 @@ export const CatalogList = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListTextWrap = styled.div`
+`,o.Ay.div`
   display: flex;
   height: 463px;
   width: 463px;
@@ -171,9 +149,7 @@ export const CatalogListTextWrap = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListText = styled.p`
+`,o.Ay.p`
   margin-right: 112px;
   margin-left: 112px;
   opacity: 1;
@@ -189,9 +165,7 @@ export const CatalogListText = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListItem = styled.div`
+`,o.Ay.div`
   display: flex;
   width: 463px;
   height: 463px;
@@ -208,9 +182,7 @@ export const CatalogListItem = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogListTextItem = styled.p`
+`,o.Ay.p`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -226,9 +198,7 @@ export const CatalogListTextItem = styled.p`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogHouseholdLinens = styled.div`
+`,o.Ay.div`
   display: flex;
   width: 463px;
   height: 463px;
@@ -249,9 +219,7 @@ export const CatalogHouseholdLinens = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogItemBed = styled.div`
+`,o.Ay.div`
   display: flex;
   width: 463px;
   height: 463px;
@@ -266,18 +234,14 @@ export const CatalogItemBed = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogAll = styled.div`
+`,o.Ay.div`
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 768px) {
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterList = styled.div`
+`,o.Ay.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -300,9 +264,7 @@ export const CatalogFilterList = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogFilterButton = styled.button`
+`),s=o.Ay.button`
   width: 140px;
   background: none;
   border: none;
@@ -346,9 +308,7 @@ export const CatalogFilterButton = styled.button`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsList = styled.ul`
+`,g=o.Ay.ul`
   /* margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -391,8 +351,7 @@ export const CatalogProductsList = styled.ul`
     gap: 30px;
     justify-content: flex-start; */
   }
-`;
-export const CatalogProductsItem = styled.li`
+`,h=o.Ay.li`
   display: flex;
   flex-direction: column;
   /* width: 100%; */
@@ -414,9 +373,7 @@ export const CatalogProductsItem = styled.li`
     /* min-width: 480px; */
     flex-direction: column;
   }
-`;
-
-export const CatalogProductsItemImg = styled.img`
+`,f=o.Ay.img`
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -435,9 +392,7 @@ export const CatalogProductsItemImg = styled.img`
     height: 300px;
     width: 100%;
   }
-`;
-
-export const CatalogProductsItemWrap = styled.div`
+`,w=o.Ay.div`
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
@@ -455,9 +410,7 @@ export const CatalogProductsItemWrap = styled.div`
   @media screen and (max-width: 480px) {
     flex-direction: row;
   }
-`;
-
-export const CatalogProductsItemTextWrap = styled.div`
+`,y=o.Ay.div`
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 768px) {
@@ -465,9 +418,7 @@ export const CatalogProductsItemTextWrap = styled.div`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsItemTextCode = styled.p`
+`,u=o.Ay.p`
   font-family: Rebelton;
   font-weight: 400;
   font-size: 16px;
@@ -493,9 +444,7 @@ export const CatalogProductsItemTextCode = styled.p`
   @media screen and (max-width: 480px) {
     margin-top: 10px;
   }
-`;
-
-export const CatalogProductsItemTextName = styled.p`
+`,b=o.Ay.p`
   font-family: Helvetica;
   font-weight: 400;
   font-size: 28px;
@@ -542,9 +491,7 @@ export const CatalogProductsItemTextName = styled.p`
   @media screen and (max-width: 480px) {
     margin-bottom: 0;
   }
-`;
-
-export const CatalogProductsItemTextPrice = styled.p`
+`,v=o.Ay.p`
   font-family: Helvetica;
   font-weight: 400;
   font-size: 28px;
@@ -562,9 +509,7 @@ export const CatalogProductsItemTextPrice = styled.p`
   @media screen and (max-width: 480px) {
     /* margin-bottom: 0; */
   }
-`;
-
-export const CatalogHomeItemLink = styled(Link)`
+`,A=(0,o.Ay)(n.N_)`
   text-decoration: none;
   display: block;
   @media screen and (max-width: 1024px) {
@@ -573,9 +518,7 @@ export const CatalogHomeItemLink = styled(Link)`
   }
   @media screen and (max-width: 480px) {
   }
-`;
-
-export const CatalogProductsBuyWrap = styled.button`
+`,z=o.Ay.button`
   background-color: rgba(35, 81, 96, 1);
   display: flex;
   flex-direction: column;
@@ -594,9 +537,7 @@ export const CatalogProductsBuyWrap = styled.button`
   @media screen and (max-width: 480px) {
     padding: 0 20px;
   }
-`;
-
-export const CatalogPaginationWrap = styled.div`
+`,k=o.Ay.div`
   display: flex;
   margin-top: 100px;
   margin-bottom: 150px;
@@ -609,14 +550,7 @@ export const CatalogPaginationWrap = styled.div`
   @media screen and (max-width: 480px) {
     margin-bottom: 100px;
   }
-`;
-
-export const CatalogProductsPagination = styled(Pagination).attrs(
-  ({ isFirstPage, isLastPage }) => ({
-    $isFirstPage: isFirstPage,
-    $isLastPage: isLastPage,
-  })
-)`
+`,S=(0,o.Ay)(a.A).attrs((e=>{let{isFirstPage:i,isLastPage:t}=e;return{$isFirstPage:i,$isLastPage:t}}))`
   & .MuiPaginationItem-root {
     font-family: Rebelton;
     font-weight: 400;
@@ -695,4 +629,5 @@ export const CatalogProductsPagination = styled(Pagination).attrs(
   }
   @media screen and (max-width: 480px) {
   }
-`;
+`},7843:(e,i,t)=>{t.d(i,{A:()=>a});t(5043);const a=t.p+"static/media/trolley.2c45ca1fe2a8bacc7202060fff299aca.svg"},9662:(e,i,t)=>{t.d(i,{A:()=>w});var a=t(5043),n=t(8387),o=t(8610),d=t(6803),r=t(4535),x=t(6262),p=t(6431),m=t(2532),l=t(2372);function c(e){return(0,l.Ay)("MuiSvgIcon",e)}(0,m.A)("MuiSvgIcon",["root","colorPrimary","colorSecondary","colorAction","colorError","colorDisabled","fontSizeInherit","fontSizeSmall","fontSizeMedium","fontSizeLarge"]);var s=t(579);const g=(0,r.Ay)("svg",{name:"MuiSvgIcon",slot:"Root",overridesResolver:(e,i)=>{const{ownerState:t}=e;return[i.root,"inherit"!==t.color&&i[`color${(0,d.A)(t.color)}`],i[`fontSize${(0,d.A)(t.fontSize)}`]]}})((0,x.A)((e=>{let{theme:i}=e;return{userSelect:"none",width:"1em",height:"1em",display:"inline-block",flexShrink:0,transition:i.transitions?.create?.("fill",{duration:(i.vars??i).transitions?.duration?.shorter}),variants:[{props:e=>!e.hasSvgAsChild,style:{fill:"currentColor"}},{props:{fontSize:"inherit"},style:{fontSize:"inherit"}},{props:{fontSize:"small"},style:{fontSize:i.typography?.pxToRem?.(20)||"1.25rem"}},{props:{fontSize:"medium"},style:{fontSize:i.typography?.pxToRem?.(24)||"1.5rem"}},{props:{fontSize:"large"},style:{fontSize:i.typography?.pxToRem?.(35)||"2.1875rem"}},...Object.entries((i.vars??i).palette).filter((e=>{let[,i]=e;return i&&i.main})).map((e=>{let[t]=e;return{props:{color:t},style:{color:(i.vars??i).palette?.[t]?.main}}})),{props:{color:"action"},style:{color:(i.vars??i).palette?.action?.active}},{props:{color:"disabled"},style:{color:(i.vars??i).palette?.action?.disabled}},{props:{color:"inherit"},style:{color:void 0}}]}}))),h=a.forwardRef((function(e,i){const t=(0,p.b)({props:e,name:"MuiSvgIcon"}),{children:r,className:x,color:m="inherit",component:l="svg",fontSize:h="medium",htmlColor:f,inheritViewBox:w=!1,titleAccess:y,viewBox:u="0 0 24 24",...b}=t,v=a.isValidElement(r)&&"svg"===r.type,A={...t,color:m,component:l,fontSize:h,instanceFontSize:e.fontSize,inheritViewBox:w,viewBox:u,hasSvgAsChild:v},z={};w||(z.viewBox=u);const k=(e=>{const{color:i,fontSize:t,classes:a}=e,n={root:["root","inherit"!==i&&`color${(0,d.A)(i)}`,`fontSize${(0,d.A)(t)}`]};return(0,o.A)(n,c,a)})(A);return(0,s.jsxs)(g,{as:l,className:(0,n.A)(k.root,x),focusable:"false",color:f,"aria-hidden":!y||void 0,role:y?"img":void 0,ref:i,...z,...b,...v&&r.props,ownerState:A,children:[v?r.props.children:r,y?(0,s.jsx)("title",{children:y}):null]})}));h.muiName="SvgIcon";const f=h;function w(e,i){function t(t,a){return(0,s.jsx)(f,{"data-testid":`${i}Icon`,ref:a,...t,children:e})}return t.muiName=f.muiName,a.memo(a.forwardRef(t))}}}]);
+//# sourceMappingURL=367.f95e557b.chunk.js.map

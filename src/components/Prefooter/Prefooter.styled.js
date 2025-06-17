@@ -3,18 +3,15 @@ import styled from "styled-components";
 
 export const PrefooterSection = styled.section`
   padding-top: 150px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   background-color: rgba(249, 249, 249, 1);
   min-width: 100vw;
   @media screen and (max-width: 1024px) {
-
   }
   @media screen and (max-width: 768px) {
     padding-top: 100px;
-    padding-bottom: 50px;
   }
   @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -56,9 +53,8 @@ export const PrefooterTextWrapper = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-   
-        margin-bottom: 80px;
-    
+
+    margin-bottom: 80px;
   }
   @media screen and (max-width: 480px) {
   }
@@ -88,7 +84,6 @@ export const PrefooterMainText = styled.h2`
     margin-bottom: 40px;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
@@ -131,10 +126,10 @@ export const PrefooterText = styled.p`
 
 export const PrefooterFormWrapper = styled.div`
   padding-top: 60px;
-    padding-right: 70px;
-    padding-bottom: 40px;
-    padding-left: 70px;
-    background-color: rgba(255, 255, 255, 1);
+  padding-right: 70px;
+  padding-bottom: 40px;
+  padding-left: 70px;
+  background-color: rgba(255, 255, 255, 1);
   @media screen and (max-width: 1024px) {
     padding-top: 50px;
     padding-right: 60px;
@@ -145,21 +140,19 @@ export const PrefooterFormWrapper = styled.div`
   }
   @media screen and (max-width: 768px) {
     padding: 50px 40px;
-  background-color: rgba(255, 255, 255, 1);
-  width: 80%;
+    background-color: rgba(255, 255, 255, 1);
+    width: 80%;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
 export const PrefooterFormBox = styled(Box)`
-
-display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
   @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
@@ -169,13 +162,12 @@ display: flex;
   }
   @media screen and (max-width: 768px) {
     display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
 
@@ -224,15 +216,14 @@ export const PrefooterTextField = styled(TextField)`
 `;
 
 export const PrefooterFormButton = styled.button`
- width: 100%;
-    font-family: Helvetica;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 48px;
-    background-color: rgba(35, 81, 96, 1);
-    color: rgba(255, 255, 255, 1);
-    margin-top: 49px;
-    padding: 10px;
+  width: 100%;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  background-color: rgba(35, 81, 96, 1);
+  color: rgba(255, 255, 255, 1);
+  margin-top: 49px;
   @media screen and (max-width: 1024px) {
     width: 100%;
     font-family: Helvetica;
@@ -245,15 +236,14 @@ export const PrefooterFormButton = styled.button`
   }
   @media screen and (max-width: 768px) {
     width: 100%;
-  font-family: Helvetica;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 48px;
-  background-color: rgba(35, 81, 96, 1);
-  color: rgba(255, 255, 255, 1);
-  margin-top: 49px;
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    background-color: rgba(35, 81, 96, 1);
+    color: rgba(255, 255, 255, 1);
+    margin-top: 49px;
   }
   @media screen and (max-width: 480px) {
-
   }
 `;
