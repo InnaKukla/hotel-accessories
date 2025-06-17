@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/hotel-accessories/static/css/main.06e2ddbe.css",
-    "main.js": "/hotel-accessories/static/js/main.44845bb9.js",
-    "static/js/54.aa1c6324.chunk.js": "/hotel-accessories/static/js/54.aa1c6324.chunk.js",
+    "main.js": "/hotel-accessories/static/js/main.14b9c0fd.js",
+    "static/js/54.183520c8.chunk.js": "/hotel-accessories/static/js/54.183520c8.chunk.js",
     "static/js/322.55ee0e33.chunk.js": "/hotel-accessories/static/js/322.55ee0e33.chunk.js",
-    "static/js/1.5fedb8a3.chunk.js": "/hotel-accessories/static/js/1.5fedb8a3.chunk.js",
+    "static/js/1.a0742e51.chunk.js": "/hotel-accessories/static/js/1.a0742e51.chunk.js",
     "static/js/290.4a7e1197.chunk.js": "/hotel-accessories/static/js/290.4a7e1197.chunk.js",
     "static/js/871.624cb8ab.chunk.js": "/hotel-accessories/static/js/871.624cb8ab.chunk.js",
     "static/js/464.3157dd31.chunk.js": "/hotel-accessories/static/js/464.3157dd31.chunk.js",
@@ -59,10 +59,10 @@
     "static/media/Search.svg": "/hotel-accessories/static/media/Search.4f5ad1c3bf67d49eef5edd7396d62545.svg",
     "static/media/ellipse.svg": "/hotel-accessories/static/media/ellipse.585af4cee736e4846f9fed1b91786eb5.svg",
     "main.06e2ddbe.css.map": "/hotel-accessories/static/css/main.06e2ddbe.css.map",
-    "main.44845bb9.js.map": "/hotel-accessories/static/js/main.44845bb9.js.map",
-    "54.aa1c6324.chunk.js.map": "/hotel-accessories/static/js/54.aa1c6324.chunk.js.map",
+    "main.14b9c0fd.js.map": "/hotel-accessories/static/js/main.14b9c0fd.js.map",
+    "54.183520c8.chunk.js.map": "/hotel-accessories/static/js/54.183520c8.chunk.js.map",
     "322.55ee0e33.chunk.js.map": "/hotel-accessories/static/js/322.55ee0e33.chunk.js.map",
-    "1.5fedb8a3.chunk.js.map": "/hotel-accessories/static/js/1.5fedb8a3.chunk.js.map",
+    "1.a0742e51.chunk.js.map": "/hotel-accessories/static/js/1.a0742e51.chunk.js.map",
     "290.4a7e1197.chunk.js.map": "/hotel-accessories/static/js/290.4a7e1197.chunk.js.map",
     "871.624cb8ab.chunk.js.map": "/hotel-accessories/static/js/871.624cb8ab.chunk.js.map",
     "464.3157dd31.chunk.js.map": "/hotel-accessories/static/js/464.3157dd31.chunk.js.map",
@@ -80,6 +80,6 @@
   },
   "entrypoints": [
     "static/css/main.06e2ddbe.css",
-    "static/js/main.44845bb9.js"
+    "static/js/main.14b9c0fd.js"
   ]
 }

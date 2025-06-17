@@ -29,7 +29,7 @@ const headerAccessoriesList = [
 
 const Header = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
+
   const user = useSelector(getUser);
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,7 +42,7 @@ const Header = () => {
   };
 
   const handleChoose = (event) => {
-    const navLink = event.target.innerHTML
+    const navLink = event.target.innerHTML;
     navigate(`/products?category=${navLink}`);
     setAnchorEl(null);
   };
@@ -69,24 +69,24 @@ const Header = () => {
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
-              style={{zIndex: 1600}}
+              style={{ zIndex: 1600 }}
             >
-                <Link to="/products">
+              <Link to="/products">
+                <HeaderAccessoriesItem>
+                  <HeaderAccessoriesItemText onClick={handleClose}>
+                    <p>all products</p>
+                  </HeaderAccessoriesItemText>
+                </HeaderAccessoriesItem>
+              </Link>
+              {headerAccessoriesList.map((item, index) => (
+                <Link to={item.link} key={index}>
                   <HeaderAccessoriesItem>
-                    <HeaderAccessoriesItemText onClick={handleClose}>
-                      <p>all products</p>
+                    <HeaderAccessoriesItemText onClick={handleChoose}>
+                      <p>{item.name}</p>
                     </HeaderAccessoriesItemText>
                   </HeaderAccessoriesItem>
                 </Link>
-                {headerAccessoriesList.map((item, index) => (
-                  <Link to={item.link} key={index}>
-                    <HeaderAccessoriesItem>
-                      <HeaderAccessoriesItemText onClick={handleChoose}>
-                        <p>{item.name}</p>
-                      </HeaderAccessoriesItemText>
-                    </HeaderAccessoriesItem>
-                  </Link>
-                ))}
+              ))}
             </Menu>
           </div>
 
@@ -107,17 +107,30 @@ const Header = () => {
               {/* <HeaderNavLink>
                 <SearchIcon />
               </HeaderNavLink> */}
-             {user.id ? (<> <HeaderNavLink $active={pathname === "/favorites"} to="/favorites">
-                <FavoriteIcon />
-              </HeaderNavLink>
-              <HeaderNavLink $active={pathname === "/basket"} to="/basket">
-                <BagIcon />
-              </HeaderNavLink></>) : (<> <HeaderNavLink  to="/favorites">
-                <FavoriteIcon />
-              </HeaderNavLink>
-              <HeaderNavLink to="/account">
-                <BagIcon />
-              </HeaderNavLink></>)}
+              {user.id ? (
+                <>
+                  {" "}
+                  <HeaderNavLink
+                    $active={pathname === "/favorites"}
+                    to="/favorites"
+                  >
+                    <FavoriteIcon />
+                  </HeaderNavLink>
+                  <HeaderNavLink $active={pathname === "/basket"} to="/basket">
+                    <BagIcon />
+                  </HeaderNavLink>
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <HeaderNavLink to="/favorites">
+                    <FavoriteIcon />
+                  </HeaderNavLink>
+                  <HeaderNavLink to="/account">
+                    <BagIcon />
+                  </HeaderNavLink>
+                </>
+              )}
               <HeaderNavLink $active={pathname === "/account"} to="/account">
                 <UserIcon />
               </HeaderNavLink>

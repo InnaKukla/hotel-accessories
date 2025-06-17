@@ -128,6 +128,11 @@ const AboutUs = () => {
     }
   };
 
+  const handleClick = (label) => {
+console.log(label);
+
+  }
+
   return (
     <AboutUsSection>
       <Container>
@@ -181,7 +186,7 @@ const AboutUs = () => {
                           // textAlign: "justify",
                         }}
                       >
-                        <AboutUsLinkWrap>
+                        <AboutUsLinkWrap onClick={() => handleClick(option.label)}>
                           {activeSection === option.id ? (
                             <img src={Ellipse} alt="Ellipse" />
                           ) : (
