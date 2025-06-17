@@ -21,7 +21,6 @@ const warmUpDatabase = async () => {
      await Product.find({category: "household-linens"}).limit(8);
     console.log("Warm up finished");
     
-    
   } catch (error) {
     console.error("Warm up error", error);
     
@@ -61,6 +60,20 @@ app.use("/api/favorites", favoritesRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/form", formRoutes);
 app.use("/api/products", productsRoutes);
+
+app.get("/wake-up", async (req, res) => {
+  try {
+    await Product.find().limit(8);
+    await Product.find({ category: "bedding" }).limit(8);
+    await Product.find({ category: "towels" }).limit(8);
+    await Product.find({ category: "household-linens" }).limit(8);
+    res.status(200).send("Server is awake and warmed up");
+  } catch (error) {
+    console.error("Wake-up error:", error);
+    res.status(500).send("Wake-up failed");
+  }
+});
+
 
 // ✅ Запуск сервера
 const PORT = process.env.PORT || 5000;
