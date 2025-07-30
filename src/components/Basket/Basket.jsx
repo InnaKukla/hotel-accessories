@@ -28,7 +28,6 @@ import {
   BasketFormItemText,
   ContainerBasket,
 } from "./Basket.styled";
-import { Container } from "../Header/Header.styled";
 import { Link, useLocation, useNavigate } from "react-router";
 import productsOperations from "../../redux/products/products-operations";
 import cartOperations from "../../redux/cart/cart-operations";
@@ -38,7 +37,6 @@ import ProductNavLinks from "../../shared/ProductNavLinks/ProductNavLinks";
 import Trash from "../../assets/icons/trash.svg";
 import CodeIcon from "../../assets/icons/code-icon.svg";
 import SizeIcon from "../../assets/icons/size-icon.svg";
-import { Typography } from "@mui/material";
 import Loader from "../../shared/Loader/Loader";
 import formsOperations from "../../redux/forms/forms-operations";
 

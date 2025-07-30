@@ -43,7 +43,6 @@ import {
   AboutUsSectionWrapHeader,
 } from "./AboutUs.styled";
 import { useMediaQuery } from "react-responsive";
-import { Box } from "@mui/system";
 import { Autocomplete, TextField } from "@mui/material";
 
 const aboutLinks = [
