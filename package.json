@@ -42,7 +42,8 @@
     "yup": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node  backend/server.js",
+    "start-frontend": "react-scripts start",
     "start-backend": "nodemon backend/server.js",
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
