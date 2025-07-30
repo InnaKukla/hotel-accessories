@@ -48,7 +48,7 @@ app.use(
   cors({
     origin: ["https://innakukla.github.io"],
     methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization",
+    allowedHeaders: ["Content-Type", "Authorization"],
     // credentials: true
   })
 );
