@@ -40,7 +40,7 @@ const ProductNavLinks = ({ item, page }) => {
 
         {page === "registration" && (
           <>
-            <Link to={`/registration`}>
+            <Link to={`/account`}>
               <ProductNavLinkItem>
                 <p>Personal account</p>
                 {/* <img src={ArrowRight} alt="Arrow Right" /> */}
