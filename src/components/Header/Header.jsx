@@ -13,7 +13,7 @@ import {
 } from "./Header.styled";
 import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import Logo from "../../assets/icons/logo-main.svg";
-import { ReactComponent as SearchIcon } from "../../assets/icons/Search.svg";
+// import { ReactComponent as SearchIcon } from "../../assets/icons/Search.svg";
 import { ReactComponent as FavoriteIcon } from "../../assets/icons/Favorite.svg";
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 import { ReactComponent as BagIcon } from "../../assets/icons/Bag.svg";
@@ -122,8 +122,7 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  {" "}
-                  <HeaderNavLink to="/favorites">
+                  <HeaderNavLink to="/account">
                     <FavoriteIcon />
                   </HeaderNavLink>
                   <HeaderNavLink to="/account">
