@@ -5,6 +5,7 @@ export const instance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
 
+console.log('API base URL:', process.env.REACT_APP_API_URL);
 // export const setToken = (token) => {
 //   if (token) {
 //     instance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
