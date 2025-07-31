@@ -12,7 +12,7 @@ root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <StrictMode>
-        <BrowserRouter basename="/hotel-accessories">
+        <BrowserRouter>
           <App />
         </BrowserRouter>
       </StrictMode>
