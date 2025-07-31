@@ -167,7 +167,7 @@ const Catalog = () => {
                             </CatalogProductsItemTextPrice>
                           </CatalogProductsItemTextWrap>
                         </Link>
-                        <Link to="/basket" state={{ id: item._id }} sx={{backgroundColor: "rgb(35, 81, 96)"}}>
+                        <Link to="/basket" state={{ id: item._id }} style={{backgroundColor: "rgb(35, 81, 96)"}}>
                           <CatalogProductsBuyWrap
                             onClick={() => handleAddToCart(item._id)}
                           >
