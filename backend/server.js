@@ -46,7 +46,7 @@ app.use(express.json());
 // Дозволяємо запити тільки з мого фронтенду (localhost:3000)
 app.use(
   cors({
-    origin: ["https://innakukla.github.io"],
+    origin: ["https://hotel-accessories.netlify.app"],
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type, Authorization",
     credentials: true
