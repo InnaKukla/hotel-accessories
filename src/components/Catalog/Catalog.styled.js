@@ -576,7 +576,7 @@ export const CatalogHomeItemLink = styled(Link)`
 `;
 
 export const CatalogProductsBuyWrap = styled.button`
-  /* background-color: rgba(35, 81, 96, 1); */
+  background-color: rgba(35, 81, 96, 1);
   display: flex;
   flex-direction: column;
   justify-content: center;
