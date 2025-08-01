@@ -47,25 +47,30 @@ const Product = () => {
   const isLoggedIn = useSelector(isUserLogin);
 
   const { id } = useParams();
+  console.log("id from params", id);
+  
 
   const dispatch = useDispatch();
   const loading = useSelector(selectProductsLoading);
   const product = useSelector(selectOneProduct);
 
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     console.log("useeffect product");
+      
+  //     await dispatch(productsOperations.fetchOneProduct({ id }));
+  //     await dispatch(favoritesOperations.fetchOneFavorites(id));
+  //   };
+  //   fetch();
+  //   setIsFavoriteProduct(isFavorite);
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
   useEffect(() => {
     const fetch = async () => {
-      await dispatch(productsOperations.fetchOneProduct({ id }));
-      await dispatch(favoritesOperations.fetchOneFavorites(id));
-    };
-    fetch();
-    setIsFavoriteProduct(isFavorite);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const fetch = async () => {
+      console.log("useeffect product");
       await dispatch(productsOperations.fetchOneProduct({ id }));
       await dispatch(favoritesOperations.fetchOneFavorites(id));
     };
