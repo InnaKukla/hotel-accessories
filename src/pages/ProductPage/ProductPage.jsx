@@ -5,7 +5,7 @@ import Prefooter from '../../components/Prefooter/Prefooter';
 
 const ProductPage = () => {
 //    const params = useParams()
-//    console.log(params);
+   console.log("products page");
    
    return (
     <div>
