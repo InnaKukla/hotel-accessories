@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import * as api from "../authService";
-import { persistor } from "../store";
 
 export const register = createAsyncThunk(
   "auth/register",
