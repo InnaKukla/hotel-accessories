@@ -72,7 +72,7 @@ export const FavoritesList = styled.ul`
   margin-top: 20px;
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 320px));
   gap: 20px;
   padding: 0;
   list-style: none;
@@ -86,7 +86,7 @@ export const FavoritesList = styled.ul`
     /* display: flex;
     flex-wrap: wrap; */
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     /* justify-content: center; */
   }
   @media screen and (max-width: 600px) {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { store } from "./store";
+import { logout } from "./auth/auth-operations";
 
 export const instance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -27,5 +28,12 @@ instance.interceptors.request.use(
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    if (error.response?.status === 401) {
+      store.dispatch(logout());
+      localStorage.removeItem("persist:auth");
+      window.location.href = "/account";
+    }
+    Promise.reject(error);
+  }
 );

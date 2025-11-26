@@ -287,7 +287,7 @@ console.log(label);
                 partnership that becomes an integral part of your hospitality
                 space, or getaway retreat.
               </AboutUsSectionText>
-              <div>
+              <div >
                 <AboutUsSectionImgSmall
                   src={OurVisionBadMattress}
                   alt="Our Vision Bad Mattress"

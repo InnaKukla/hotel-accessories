@@ -3,7 +3,7 @@
   src: url('/public/fonts/Angst-Normal.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   src: url('/public/fonts/REBELTON-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 
 }
 
@@ -21,6 +21,7 @@
   url('/public/fonts/Helvetica.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 body {
   margin: 0;
@@ -35,7 +36,6 @@ html,
 #root {
   min-height: 100vh;
 }
-
 
 h1,
 h2,
