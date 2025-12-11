@@ -23,7 +23,13 @@ const fetchOneProduct = createAsyncThunk(
   "oneProduct/fetch",
   async ({ id }, thunkApi) => {
     try {
-      const response = await instance.get(`products/one/${id}`);
+      const response = await instance.get(`products/one`,
+        {
+            params: {
+            id
+          }
+        }
+      );
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
@@ -34,7 +40,11 @@ const fetchProductsByCategory = createAsyncThunk(
   "allProductsByCategory /fetch",
   async (category, thunkApi) => {
     try {
-      const response = await instance.get(`products/category/${category}`, {});
+      const response = await instance.get(`products/category`, {
+        params: {
+          category
+        }
+      });
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
