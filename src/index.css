@@ -27,6 +27,7 @@ body {
   margin: 0;
   font-family:'Angst', sans-serif !important;
   background-color: rgba(249, 249, 249, 1);
+  min-height: 100vh;
  
 }
 
@@ -35,6 +36,7 @@ html,
 
 #root {
   min-height: 100vh;
+  
 }
 
 h1,

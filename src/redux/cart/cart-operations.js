@@ -6,7 +6,7 @@ const fetchCartProducts = createAsyncThunk(
   "fetchCartProducts /fetch",
   async (userId, thunkApi) => {
     try {
-      const response = await instance.get("/cart", { userId: userId });
+      const response = await instance.get("cart/list", { userId: userId });
 
       return response.data;
     } catch (error) {
@@ -33,7 +33,7 @@ const addCartProduct = createAsyncThunk(
   "addCartProduct/post",
   async (data, thunkApi) => {
     try {
-      const response = await instance.post("/cart/add", data);
+      const response = await instance.post("cart/add", data);
 
       return response.data;
     } catch (error) {
@@ -46,7 +46,7 @@ const updateCartQuantity = createAsyncThunk(
   "updateCartQuantity/put",
   async (data, thunkApi) => {
     try {
-      const response = await instance.put("/cart/updateQuantity", data);
+      const response = await instance.put("cart/update", data);
 
       return response.data;
     } catch (error) {
@@ -58,7 +58,7 @@ const deleteProduct = createAsyncThunk(
   "deleteProduct/delete",
   async (id, thunkApi) => {
     try {
-      const response = await instance.delete(`/cart/remove/${id}`);
+      const response = await instance.delete(`cart/remove/${id}`);
 
       return response.data;
     } catch (error) {
@@ -71,7 +71,7 @@ const clearCart = createAsyncThunk(
   "clearCart /delete",
   async (id, thunkApi) => {
     try {
-      const response = await instance.delete("/cart/clear", {});
+      const response = await instance.delete("cart/clear", {});
 
       return response.data;
     } catch (error) {

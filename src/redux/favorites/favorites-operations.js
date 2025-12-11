@@ -8,7 +8,7 @@ const fetchAllFavorites = createAsyncThunk(
       console.log(userId);
       
       try {
-        const response = await instance.get('/favorites', {userId: userId} );
+        const response = await instance.get('favorites/list', {userId: userId} );
   
         return response.data;
       } catch (error) {
@@ -23,7 +23,7 @@ const fetchOneFavorites = createAsyncThunk(
   async ( productId , thunkApi) => {
     
     try {
-      const response = await instance.get(`/favorites/${productId}`);
+      const response = await instance.get(`favorites/one/${productId}`);
 
       return response.data;
     } catch (error) {
@@ -37,7 +37,7 @@ const fetchOneFavorites = createAsyncThunk(
     async (data, thunkApi) => {
   
       try {
-        const response = await instance.post('/favorites', data );
+        const response = await instance.post('favorites/add', data );
         
         return response.data;
       } catch (error) {
@@ -50,7 +50,7 @@ const fetchOneFavorites = createAsyncThunk(
     async (id, thunkApi) => {
       
       try {
-        const response = await instance.delete(`/favorites/${id}`, {
+        const response = await instance.delete(`favorites/remove${id}`, {
         });
   
         return response.data;

@@ -177,7 +177,9 @@ router.post("/api/products", upload.single("image"), async (req, res) => {
     try {
       const { category } = req.params;
       if (!["bedding", "towels", "household-linens"].includes(category)) {
-        return res.status(400).json({ message: "Invalid category" });
+        return res.status(400).json({
+          message: "Invalid category"
+        });
       }
   
       const catalog = await Product.findOne({});

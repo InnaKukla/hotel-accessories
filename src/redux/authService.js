@@ -1,12 +1,12 @@
 import { instance } from "./instance";
 
 export const registerUser = async (data) => {
-  const { data: result } = await instance.post("/auth/register", data);
+  const { data: result } = await instance.post("api/auth/register", data);
   return result;
 };
 
 export const loginUser = async (data) => {
-  const { data: result } = await instance.post("/auth/login", data);
+  const { data: result } = await instance.post("api/auth/login", data);
   return result;
 };
 

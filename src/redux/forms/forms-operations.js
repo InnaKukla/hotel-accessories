@@ -6,7 +6,7 @@ const sendContactForm = createAsyncThunk(
   "sendContactForm /post",
   async (formData, thunkApi) => {
     try {
-      const response = await instance.post(`/form/contact`, formData);
+      const response = await instance.post(`form/contact`, formData);
 
       return response.data;
     } catch (error) {
@@ -21,7 +21,7 @@ const sendOrderForm = createAsyncThunk(
     console.log(formData);
     
     try {
-      const response = await instance.post("/form/order", formData);
+      const response = await instance.post("form/order", formData);
       console.log(response.data);
       
       return response.data;
@@ -35,7 +35,7 @@ const fetchOrders = createAsyncThunk(
   "fetchOrders/fetch",
   async (_, thunkApi) => {
     try {
-      const response = await instance.get("/form/orders");
+      const response = await instance.get("form/orders");
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
