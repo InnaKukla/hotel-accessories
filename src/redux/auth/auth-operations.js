@@ -49,7 +49,7 @@ export const updateUserProfile = createAsyncThunk(
     const { auth } = getState();
 
     try {
-      const result = await api.updateUser(formData, auth.token);
+      const result = await api.updateUser(formData, auth);
       return result;
     } catch (error) {
       if (error.response.status === 401 || error.response.status === 400) {

@@ -1,12 +1,12 @@
 import { instance } from "./instance";
 
 export const registerUser = async (data) => {
-  const { data: result } = await instance.post("api/auth/register", data);
+  const { data: result } = await instance.post("auth/register", data);
   return result;
 };
 
 export const loginUser = async (data) => {
-  const { data: result } = await instance.post("api/auth/login", data);
+  const { data: result } = await instance.post("auth/login", data);
   return result;
 };
 
@@ -22,13 +22,18 @@ export const loginUser = async (data) => {
 // };
 
 export const updateUser = async (data) => {
-  const { data: result } = await instance.put("/auth/update-profile", data);
+  const { data: result } = await instance.put("/auth/update", data);
   return result;
 };
 
 export const getOneUser = async (id) => {
   try {
-    const { data: result } = await instance.get(`/auth/user/${id}`);
+    const { data: result } = await instance.get(`/auth/user`,
+      {
+        params: {
+        id
+      }}
+    );
     return result;
   } catch (error) {
     throw error;
