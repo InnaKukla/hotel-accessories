@@ -44,7 +44,6 @@ const LoginForm = () => {
     initialValues,
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
-      console.log("Submitted values:", values);
       await dispatch(login(values));
       
       setFormSubmitted(true);

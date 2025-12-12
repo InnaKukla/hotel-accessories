@@ -5,7 +5,6 @@ import { instance } from "../instance";
 const fetchCartProducts = createAsyncThunk(
   "fetchCartProducts /fetch",
   async (userId, thunkApi) => {
-    console.log(userId);
 
     try {
       const response = await instance.get("/cart/list", { userId });
